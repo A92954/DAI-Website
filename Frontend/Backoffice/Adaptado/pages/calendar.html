@@ -174,7 +174,7 @@
           style="background-color: #132453"
         >
           <img
-            src="/dist/img/cidadeAmigaLogo.png"
+            src="/Frontend/Backoffice/Adaptado/dist/img/cidadeAmigaLogo.png"
             alt="Cidade amiga Logo"
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
@@ -195,10 +195,28 @@
             >
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="/index.html" class="nav-link">
+                  <a
+                    href="/Frontend/Backoffice/Adaptado/index.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-th"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Dashboard
+                      <!-- <span class="right badge badge-danger">New</span> -->
+                    </p>
+                  </a>
+                </li>
+              </div>
+              <br />
+              <div style="background-color: #8f9dc3">
+                <li class="nav-item">
+                  <a
+                    href="/Frontend/Backoffice/Adaptado/pages/tables/data.html"
+                    class="nav-link"
+                  >
+                    <i class="nav-icon far fa-calendar-alt"></i>
+                    <p style="padding-top: 10px; padding-bottom: 10px">
+                      Atividades
                       <!-- <span class="right badge badge-danger">New</span> -->
                     </p>
                   </a>
@@ -220,9 +238,21 @@
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
+                    <i class="nav-icon far fa-calendar-alt"></i>
+                    <p style="padding-top: 10px; padding-bottom: 10px">
+                      Materiais de referência
+                      <!-- <span class="right badge badge-danger">New</span> -->
+                    </p>
+                  </a>
+                </li>
+              </div>
+              <br />
+              <div style="background-color: #8f9dc3">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
-                      Histórico de sugestões
+                      Histórico de atividades
                       <!-- <span class="right badge badge-danger">New</span> -->
                     </p>
                   </a>
@@ -234,19 +264,7 @@
                   <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-check-double"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
-                      Avaliações
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-house-user"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      C.M. Guimarães
+                      Perfil
                       <!-- <span class="right badge badge-danger">New</span> -->
                     </p>
                   </a>
@@ -942,31 +960,13 @@
                     <div class="card-body">
                       <!-- the events -->
                       <div id="external-events">
-                        <div
-                          class="toastsDefaultSuccess external-event bg-success"
-                        >
-                          Lunch
-                        </div>
-                        <div
-                          class="toastsDefaultSuccess external-event bg-warning"
-                        >
-                          Go home
-                        </div>
-                        <div
-                          class="toastsDefaultSuccess external-event bg-info"
-                        >
-                          Do homework
-                        </div>
-                        <div
-                          class="toastsDefaultSuccess external-event bg-primary"
-                        >
+                        <div class="external-event bg-success">Lunch</div>
+                        <div class="external-event bg-warning">Go home</div>
+                        <div class="external-event bg-info">Do homework</div>
+                        <div class="external-event bg-primary">
                           Work on UI design
                         </div>
-                        <div
-                          class="toastsDefaultSuccess external-event bg-danger"
-                        >
-                          Sleep tight
-                        </div>
+                        <div class="external-event bg-danger">Sleep tight</div>
                         <div class="checkbox">
                           <label for="drop-remove">
                             <input type="checkbox" id="drop-remove" />
@@ -1298,17 +1298,6 @@
 
           // Remove event from text input
           $("#new-event").val("");
-        });
-      });
-    </script>
-
-    <script>
-      $(".toastsDefaultSuccess").click(function () {
-        $(document).Toasts("create", {
-          class: "bg-success",
-          title: "Atividade publicitada",
-          subtitle: "",
-          body: "A atividade selecionada foi publicitada com sucesso.",
         });
       });
     </script>

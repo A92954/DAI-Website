@@ -765,7 +765,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #call-to-action {
   background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.9)),
-    url(/img/clients/Rectangle\ 144.png) fixed center center;
+    url(/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/Rectangle\ 144.png)
+      fixed center center;
   position: relative;
   background-size: cover;
   padding: 60px 0;
@@ -838,7 +839,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Facts Section
 --------------------------------*/
 #facts {
-  background: url("../img/facts-bg.jpg") center top no-repeat fixed;
+  background: url("/Frontend/FrontOffice/bizpage-master/bizpage-master/img/facts-bg.jpg")
+    center top no-repeat fixed;
   background-size: cover;
   padding: 60px 0 0 0;
   position: relative;
