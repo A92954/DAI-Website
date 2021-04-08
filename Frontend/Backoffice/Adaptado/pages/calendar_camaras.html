@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
     <!-- SweetAlert2 -->
     <script src="/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Select2 -->
+    <link
+      rel="stylesheet"
+      href="/Frontend/Backoffice/Adaptado/plugins/select2/css/select2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Frontend/Backoffice/Adaptado/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
+    />
   </head>
   <body class="hold-transition sidebar-mini layout-navbar-fixed">
     <!-- layout-fixed -->
@@ -1044,10 +1053,9 @@
       <!-- /.content-wrapper -->
 
       <div class="modal fade" id="MaisInfo">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">*Nome da atividade*</h4>
               <button
                 type="button"
                 class="close"
@@ -1059,64 +1067,82 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Local</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="name@example.com"
-                  />
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputEmail4">Nome da atividade</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputEmail4"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Local</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputPassword4"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Data de inicio</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputEmail4"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Data de fim</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputPassword4"
+                      readonly
+                    />
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Example select</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect2"
-                    >Example multiple select</label
-                  >
-                  <select
-                    multiple
-                    class="form-control"
-                    id="exampleFormControlSelect2"
-                  >
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1"
-                    >Example textarea</label
-                  >
+                  <label for="exampleFormControlTextarea1">Descrição</label>
                   <textarea
                     class="form-control"
                     id="exampleFormControlTextarea1"
                     rows="3"
+                    style="resize: none"
+                    readonly
                   ></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Parceiros</label>
+                  <select
+                    class="select2bs4"
+                    multiple="multiple"
+                    style="width: 100%"
+                  >
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
                 </div>
               </form>
             </div>
             <div class="modal-footer justify-content-between">
               <button
                 type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
+                class="btn btn-default toastsDefaultSuccess"
               >
-                Close
+                Divulgar
               </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
-              </button>
+              <button type="button" class="btn btn-primary">Submeter</button>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -1159,9 +1185,18 @@
     <script src="../plugins/fullcalendar/main.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
+    <!-- Select2 -->
+    <script src="/Frontend/Backoffice/Adaptado/plugins/select2/js/select2.full.min.js"></script>
     <!-- Page specific script -->
     <script>
       $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+
+        //Initialize Select2 Elements
+        $(".select2bs4").select2({
+          theme: "bootstrap4",
+        });
         /* initialize the external events
      -----------------------------------------------------------------*/
         function ini_events(ele) {
@@ -1330,6 +1365,15 @@
 
           // Remove event from text input
           $("#new-event").val("");
+        });
+        $(".toastsDefaultSuccess").click(function () {
+          $(document).Toasts("create", {
+            class: "bg-success",
+            title: "Atividade divulgada",
+            subtitle: "Registado",
+            body:
+              "A atividade em questão aparece agora nas recomendações, na aplcação.",
+          });
         });
       });
     </script>

@@ -1013,10 +1013,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1043,10 +1046,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1058,10 +1064,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1073,10 +1082,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1088,10 +1100,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1103,10 +1118,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1118,10 +1136,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1133,10 +1154,13 @@
                             elit.
                           </td>
                           <td>
-                            <button type="button" class="btn btn-success">
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
                               <i class="fas fa-vote-yea"></i>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger remove">
                               <i class="far fa-trash-alt"></i>
                             </button>
                           </td>
@@ -1246,6 +1270,24 @@
           info: true,
           autoWidth: false,
           responsive: true,
+        });
+        $(".toastsDefaultSuccess").click(function () {
+          $(document).Toasts("create", {
+            class: "bg-success",
+            title: "Sugestão aceite",
+            subtitle: "Registado",
+            body: "A sugestão foi aceite com sucesso.",
+          });
+        });
+        $("#example1").on("click", ".remove", function () {
+          var table = $("#example1").DataTable();
+          var row = $(this).parents("tr");
+
+          if ($(row).hasClass("child")) {
+            table.row($(row).prev("tr")).remove().draw();
+          } else {
+            table.row($(this).parents("tr")).remove().draw();
+          }
         });
       });
     </script>
