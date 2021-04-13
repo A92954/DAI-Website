@@ -15,6 +15,19 @@
       rel="stylesheet"
       href="../../plugins/fontawesome-free/css/all.min.css"
     />
+    <!-- DataTables -->
+    <link
+      rel="stylesheet"
+      href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css"
+    />
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
   </head>
@@ -207,23 +220,7 @@
                 </li>
               </div>
               <br />
-              <!-- esta opção só aparece para as camaras -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/data.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon far fa-calendar-alt"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Atividades
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <!-- esta opção só aparece para as instituições -->
+              <!-- esta opção aparece sempre -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
                   <a
@@ -233,38 +230,6 @@
                     <i class="nav-icon far fa-calendar-alt"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Calendário de atividades
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <!-- esta opção só aparece para as camaras -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/calendar_camaras.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon far fa-calendar-alt"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Calendário de atividades
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <!-- esta opção só aparece para as camaras -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/materialReferencia.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon far fa-calendar-alt"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Materiais de referência
                       <!-- <span class="right badge badge-danger">New</span> -->
                     </p>
                   </a>
@@ -304,12 +269,9 @@
               </div>
               <br />
               <!-- esta opção só aparece para as instituições -->
-              <div style="background-color: #8f9dc3">
+              <div style="background-color: #606a85">
                 <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/sugestoes.html"
-                    class="nav-link"
-                  >
+                  <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-comment-dots"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Sugestões
@@ -320,7 +282,7 @@
               </div>
               <br />
               <!-- esta opção aparece sempre -->
-              <div style="background-color: #606a85">
+              <div style="background-color: #8f9dc3">
                 <li class="nav-item">
                   <a
                     href="/Frontend/Backoffice/Adaptado/pages/examples/profile.html"
@@ -338,7 +300,10 @@
               <!-- esta opção aparece sempre -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a
+                    href="/Frontend/FrontOffice/bizpage-master/bizpage-master/index.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-house-user"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Logout
@@ -1036,7 +1001,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Página pessoal</h1>
+                <h1 class="m-0">Sugestões</h1>
               </div>
             </div>
           </div>
@@ -1047,79 +1012,193 @@
         <section class="content">
           <div class="container-fluid">
             <div class="row">
-              <!-- /.col -->
-              <div class="col-md-12">
+              <div class="col-12">
                 <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Ultimas sugestões</h3>
+                  </div>
                   <!-- /.card-header -->
                   <div class="card-body">
-                    <div class="tab-content">
-                      <div class="active tab-pane" id="activity">
-                        <form class="form-horizontal">
-                          <div class="form-group row">
-                            <label
-                              for="inputName"
-                              class="col-sm-2 col-form-label"
-                              >Nome:</label
+                    <table
+                      id="example1"
+                      class="table table-bordered table-striped"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Nome atividade</th>
+                          <th>Descrição</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Palhaçada</td>
+                          <td>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
                             >
-                            <div class="col-sm-10">
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputName"
-                                readonly
-                                value="Nome da camara/instituição"
-                              />
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label
-                              for="inputName2"
-                              class="col-sm-2 col-form-label"
-                              >Localidade:</label
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Carros</td>
+                          <td>
+                            BLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-success">
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>JJ</td>
+                          <td>
+                            CLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
                             >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputName2"
-                                readonly
-                                value="Guimarães"
-                              />
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label
-                              for="inputEmail"
-                              class="col-sm-2 col-form-label"
-                              >Email:</label
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Aleijados</td>
+                          <td>
+                            DLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
                             >
-                            <div class="col-sm-10">
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputEmail"
-                                readonly
-                                value="emailGuimarães@cmg.pt"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <div class="offset-sm-2 col-sm-10">
-                              <button
-                                type="button"
-                                class="btn btn-danger"
-                                data-toggle="modal"
-                                data-target="#alterarPass"
-                              >
-                                Alterar password
-                              </button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <!-- /.tab-content -->
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Camaleão</td>
+                          <td>
+                            ELorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Pastilhas</td>
+                          <td>
+                            ULorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Balões</td>
+                          <td>
+                            TLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Água</td>
+                          <td>
+                            PLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Zorro</td>
+                          <td>
+                            ELorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success toastsDefaultSuccess remove"
+                            >
+                              <i class="fas fa-vote-yea"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger remove">
+                              <i class="far fa-trash-alt"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Nome atividade</th>
+                          <th>Descrição</th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
                   </div>
                   <!-- /.card-body -->
                 </div>
@@ -1134,63 +1213,6 @@
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
-
-      <div class="modal fade" id="alterarPass">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="input-group mb-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Antiga password"
-                    id="p-antiga"
-                    required
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-eye" onclick="verPass()"></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-group mb-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Nova password"
-                    id="p-nova"
-                    required
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-eye" onclick="verPass()"></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                  <button type="submit" class="btn btn-primary">
-                    Confirmar
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
 
       <footer class="main-footer">
         <div class="float-right d-none d-sm-block"><b>Version</b> 3.1.0-rc</div>
@@ -1213,23 +1235,86 @@
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../../plugins/jszip/jszip.min.js"></script>
+    <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-
+    <!-- Page specific script -->
     <script>
-      function verPass() {
-        var x = document.getElementById("p-antiga");
-        var y = document.getElementById("p-nova");
-        if (x.type === "password") {
-          x.type = "text";
-          y.type = "text";
-        } else {
-          x.type = "password";
-          y.type = "password";
-        }
-      }
+      $(function () {
+        $("#example1")
+          .DataTable({
+            responsive: true,
+            lengthChange: false,
+            autoWidth: false,
+            buttons: ["excel", "pdf", "print", "colvis"],
+            language: {
+              sprocessing: "Tratamento em curso...",
+              search: "Procurar",
+              lengthMenu: "Ver elementos _MENU_",
+              info: "Mostrando _START_ de _END_ entradas",
+              infoEmpty: "",
+              infoFiltered: "(De um total de _MAX_)",
+              infoPostFix: "",
+              loadingRecords: "Carregamento em curso...",
+              zeroRecords: "Não foi encontrado nenhum registo correspondente.",
+              emptyTable: "Não existe dados disponíveis na tabela",
+              paginate: {
+                first: "Primeiro",
+                previous: "Anterior",
+                next: "Seguinte",
+                last: "Ultimo",
+              },
+              aria: {
+                sortAscending: ": Ordenar por ordem crescente",
+                sortDescending: ": Ordenar por ordem decrescente",
+              },
+            },
+          })
+          .buttons()
+          .container()
+          .appendTo("#example1_wrapper .col-md-6:eq(0)");
+        $("#example2").DataTable({
+          paging: true,
+          lengthChange: false,
+          searching: false,
+          ordering: true,
+          info: true,
+          autoWidth: false,
+          responsive: true,
+        });
+        $(".toastsDefaultSuccess").click(function () {
+          $(document).Toasts("create", {
+            class: "bg-success",
+            title: "Sugestão aceite",
+            subtitle: "Registado",
+            body: "A sugestão foi aceite com sucesso.",
+          });
+        });
+        $("#example1").on("click", ".remove", function () {
+          var table = $("#example1").DataTable();
+          var row = $(this).parents("tr");
+
+          if ($(row).hasClass("child")) {
+            table.row($(row).prev("tr")).remove().draw();
+          } else {
+            table.row($(this).parents("tr")).remove().draw();
+          }
+        });
+      });
     </script>
   </body>
 </html>

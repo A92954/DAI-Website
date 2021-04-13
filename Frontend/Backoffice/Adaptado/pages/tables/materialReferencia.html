@@ -15,6 +15,19 @@
       rel="stylesheet"
       href="../../plugins/fontawesome-free/css/all.min.css"
     />
+    <!-- DataTables -->
+    <link
+      rel="stylesheet"
+      href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css"
+    />
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
   </head>
@@ -223,22 +236,6 @@
                 </li>
               </div>
               <br />
-              <!-- esta opção só aparece para as instituições -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/calendar.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon far fa-calendar-alt"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Calendário de atividades
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
               <!-- esta opção só aparece para as camaras -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
@@ -256,12 +253,9 @@
               </div>
               <br />
               <!-- esta opção só aparece para as camaras -->
-              <div style="background-color: #8f9dc3">
+              <div style="background-color: #606a85">
                 <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/materialReferencia.html"
-                    class="nav-link"
-                  >
+                  <a href="#" class="nav-link">
                     <i class="nav-icon far fa-calendar-alt"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Materiais de referência
@@ -287,40 +281,8 @@
                 </li>
               </div>
               <br />
-              <!-- esta opção só aparece para as instituições -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/parceiros.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon fas fa-handshake"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Parceiros
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <!-- esta opção só aparece para as instituições -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/sugestoes.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon fas fa-comment-dots"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Sugestões
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
               <!-- esta opção aparece sempre -->
-              <div style="background-color: #606a85">
+              <div style="background-color: #8f9dc3">
                 <li class="nav-item">
                   <a
                     href="/Frontend/Backoffice/Adaptado/pages/examples/profile.html"
@@ -338,7 +300,10 @@
               <!-- esta opção aparece sempre -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a
+                    href="/Frontend/FrontOffice/bizpage-master/bizpage-master/index.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-house-user"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Logout
@@ -1036,7 +1001,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Página pessoal</h1>
+                <h1 class="m-0">Materiais de referência</h1>
               </div>
             </div>
           </div>
@@ -1047,79 +1012,413 @@
         <section class="content">
           <div class="container-fluid">
             <div class="row">
-              <!-- /.col -->
-              <div class="col-md-12">
+              <div class="col-12">
                 <div class="card">
-                  <!-- /.card-header -->
+                  <div class="card-header">
+                    <h3 class="card-title">
+                      Criar novo material de referência
+                    </h3>
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
                   <div class="card-body">
-                    <div class="tab-content">
-                      <div class="active tab-pane" id="activity">
-                        <form class="form-horizontal">
-                          <div class="form-group row">
-                            <label
-                              for="inputName"
-                              class="col-sm-2 col-form-label"
-                              >Nome:</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputName"
-                                readonly
-                                value="Nome da camara/instituição"
-                              />
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label
-                              for="inputName2"
-                              class="col-sm-2 col-form-label"
-                              >Localidade:</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputName2"
-                                readonly
-                                value="Guimarães"
-                              />
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label
-                              for="inputEmail"
-                              class="col-sm-2 col-form-label"
-                              >Email:</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputEmail"
-                                readonly
-                                value="emailGuimarães@cmg.pt"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <div class="offset-sm-2 col-sm-10">
-                              <button
-                                type="button"
-                                class="btn btn-danger"
-                                data-toggle="modal"
-                                data-target="#alterarPass"
+                    <form>
+                      <div class="form-group">
+                        <label for="titulo1">Título</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="titulo1"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="descricao1">Descrição</label>
+                        <textarea
+                          class="form-control"
+                          id="descricao1"
+                          cols="3"
+                          rows="3"
+                          style="resize: none"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="form-group">
+                        <div id="actions" class="row">
+                          <div class="col-lg-6">
+                            <div class="btn-group w-100">
+                              <span
+                                class="btn btn-success col fileinput-button"
                               >
-                                Alterar password
+                                <i class="fas fa-plus"></i>
+                                <span>Adicionar ficheiros</span>
+                              </span>
+                              <button
+                                type="submit"
+                                class="btn btn-primary col start"
+                              >
+                                <i class="fas fa-upload"></i>
+                                <span>Carregar</span>
+                              </button>
+                              <button
+                                type="reset"
+                                class="btn btn-warning col cancel"
+                              >
+                                <i class="fas fa-times-circle"></i>
+                                <span>Cancelar carregamento</span>
                               </button>
                             </div>
                           </div>
-                        </form>
+                          <div class="col-lg-6 d-flex align-items-center">
+                            <div class="fileupload-process w-100">
+                              <div
+                                id="total-progress"
+                                class="progress progress-striped active"
+                                role="progressbar"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="0"
+                              >
+                                <div
+                                  class="progress-bar progress-bar-success"
+                                  style="width: 0%"
+                                  data-dz-uploadprogress
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table table-striped files" id="previews">
+                          <div id="template" class="row mt-2">
+                            <div class="col-auto">
+                              <span class="preview"
+                                ><img src="data:," alt="" data-dz-thumbnail
+                              /></span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                              <p class="mb-0">
+                                <span class="lead" data-dz-name></span>
+                                (<span data-dz-size></span>)
+                              </p>
+                              <strong
+                                class="error text-danger"
+                                data-dz-errormessage
+                              ></strong>
+                            </div>
+                            <div class="col-4 d-flex align-items-center">
+                              <div
+                                class="progress progress-striped active w-100"
+                                role="progressbar"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="0"
+                              >
+                                <div
+                                  class="progress-bar progress-bar-success"
+                                  style="width: 0%"
+                                  data-dz-uploadprogress
+                                ></div>
+                              </div>
+                            </div>
+                            <div class="col-auto d-flex align-items-center">
+                              <div class="btn-group">
+                                <button class="btn btn-primary start">
+                                  <i class="fas fa-upload"></i>
+                                  <span>Carregar</span>
+                                </button>
+                                <button
+                                  data-dz-remove
+                                  class="btn btn-warning cancel"
+                                >
+                                  <i class="fas fa-times-circle"></i>
+                                  <span>Cancelar</span>
+                                </button>
+                                <button
+                                  data-dz-remove
+                                  class="btn btn-danger delete"
+                                >
+                                  <i class="fas fa-trash"></i>
+                                  <span>Apagar</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <!-- /.tab-content -->
+                      <!-- /.card-body -->
+                      <button
+                        type="submit"
+                        id="addNovo"
+                        class="btn btn-primary"
+                      >
+                        Adicionar
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Material já preparado</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table
+                      id="example1"
+                      class="table table-bordered table-striped"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Título</th>
+                          <th>Descrição</th>
+                          <th>Estado</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Palhaçada</td>
+                          <td>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td class="project-state">
+                            <span class="badge badge-success">Ativo</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch1"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch1"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Carros</td>
+                          <td>
+                            BLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-success">Ativo</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch2"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch2"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>JJ</td>
+                          <td>
+                            CLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-success">Ativo</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch3"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch3"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Aleijados</td>
+                          <td>
+                            DLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-warning">Pending</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch4"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch4"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Camaleão</td>
+                          <td>
+                            ELorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-success">Ativo</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch5"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch5"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Pastilhas</td>
+                          <td>
+                            ULorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-success">Ativo</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch6"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch6"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Balões</td>
+                          <td>
+                            TLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-success">Ativo</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch7"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch7"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Água</td>
+                          <td>
+                            PLorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-danger">Desligado</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch8"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch8"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Zorro</td>
+                          <td>
+                            ELorem ipsum dolor sit, amet consectetur adipisicing
+                            elit.
+                          </td>
+                          <td>
+                            <span class="badge badge-info">Processando</span>
+                          </td>
+                          <td>
+                            <div
+                              class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+                            >
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="customSwitch9"
+                              />
+                              <label
+                                class="custom-control-label"
+                                for="customSwitch9"
+                              ></label>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Título</th>
+                          <th>Descrição</th>
+                          <th>Estado</th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                    </table>
                   </div>
                   <!-- /.card-body -->
                 </div>
@@ -1135,10 +1434,11 @@
       </div>
       <!-- /.content-wrapper -->
 
-      <div class="modal fade" id="alterarPass">
+      <div class="modal fade" id="VerMaisInfo">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
+              <h4 class="modal-title">*Nome da atividade*</h4>
               <button
                 type="button"
                 class="close"
@@ -1150,40 +1450,64 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="input-group mb-3">
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Local</label>
                   <input
-                    type="password"
+                    type="text"
                     class="form-control"
-                    placeholder="Antiga password"
-                    id="p-antiga"
-                    required
+                    id="exampleFormControlInput1"
+                    placeholder="name@example.com"
                   />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-eye" onclick="verPass()"></span>
-                    </div>
-                  </div>
                 </div>
-                <div class="input-group mb-3">
-                  <input
-                    type="password"
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect2"
+                    >Example multiple select</label
+                  >
+                  <select
+                    multiple
                     class="form-control"
-                    placeholder="Nova password"
-                    id="p-nova"
-                    required
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-eye" onclick="verPass()"></span>
-                    </div>
-                  </div>
+                    id="exampleFormControlSelect2"
+                  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
                 </div>
-                <div class="modal-footer justify-content-between">
-                  <button type="submit" class="btn btn-primary">
-                    Confirmar
-                  </button>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"
+                    >Example textarea</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
                 </div>
               </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -1213,23 +1537,129 @@
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../../plugins/jszip/jszip.min.js"></script>
+    <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-
+    <!-- dropzonejs -->
+    <script src="../../plugins/dropzone/min/dropzone.min.js"></script>
+    <!-- Page specific script -->
     <script>
-      function verPass() {
-        var x = document.getElementById("p-antiga");
-        var y = document.getElementById("p-nova");
-        if (x.type === "password") {
-          x.type = "text";
-          y.type = "text";
-        } else {
-          x.type = "password";
-          y.type = "password";
-        }
-      }
+      $(function () {
+        $("#example1")
+          .DataTable({
+            responsive: true,
+            lengthChange: false,
+            autoWidth: false,
+            language: {
+              sprocessing: "Tratamento em curso...",
+              search: "Procurar",
+              lengthMenu: "Ver elementos _MENU_",
+              info: "Mostrando _START_ de _END_ entradas",
+              infoEmpty: "",
+              infoFiltered: "(De um total de _MAX_)",
+              infoPostFix: "",
+              loadingRecords: "Carregamento em curso...",
+              zeroRecords: "Não foi encontrado nenhum registo correspondente.",
+              emptyTable: "Não existe dados disponíveis na tabela",
+              paginate: {
+                first: "Primeiro",
+                previous: "Anterior",
+                next: "Seguinte",
+                last: "Ultimo",
+              },
+              aria: {
+                sortAscending: ": Ordenar por ordem crescente",
+                sortDescending: ": Ordenar por ordem decrescente",
+              },
+            },
+          })
+          .buttons()
+          .container()
+          .appendTo("#example1_wrapper .col-md-6:eq(0)");
+        $("#example2").DataTable({
+          paging: true,
+          lengthChange: false,
+          searching: false,
+          ordering: true,
+          info: true,
+          autoWidth: false,
+          responsive: true,
+        });
+        // DropzoneJS Demo Code Start
+        Dropzone.autoDiscover = false;
+
+        // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
+        var previewNode = document.querySelector("#template");
+        previewNode.id = "";
+        var previewTemplate = previewNode.parentNode.innerHTML;
+        previewNode.parentNode.removeChild(previewNode);
+
+        var myDropzone = new Dropzone(document.body, {
+          // Make the whole body a dropzone
+          url: "/target-url", // Set the url
+          thumbnailWidth: 80,
+          thumbnailHeight: 80,
+          parallelUploads: 20,
+          previewTemplate: previewTemplate,
+          autoQueue: false, // Make sure the files aren't queued until manually added
+          previewsContainer: "#previews", // Define the container to display the previews
+          clickable: ".fileinput-button", // Define the element that should be used as click trigger to select files.
+        });
+
+        myDropzone.on("addedfile", function (file) {
+          // Hookup the start button
+          file.previewElement.querySelector(".start").onclick = function () {
+            myDropzone.enqueueFile(file);
+          };
+        });
+
+        // Update the total progress bar
+        myDropzone.on("totaluploadprogress", function (progress) {
+          document.querySelector("#total-progress .progress-bar").style.width =
+            progress + "%";
+        });
+
+        myDropzone.on("sending", function (file) {
+          // Show the total progress bar when upload starts
+          document.querySelector("#total-progress").style.opacity = "1";
+          // And disable the start button
+          file.previewElement
+            .querySelector(".start")
+            .setAttribute("disabled", "disabled");
+        });
+
+        // Hide the total progress bar when nothing's uploading anymore
+        myDropzone.on("queuecomplete", function (progress) {
+          document.querySelector("#total-progress").style.opacity = "0";
+        });
+
+        // Setup the buttons for all transfers
+        // The "add files" button doesn't need to be setup because the config
+        // `clickable` has already been specified.
+        document.querySelector("#actions .start").onclick = function () {
+          myDropzone.enqueueFiles(
+            myDropzone.getFilesWithStatus(Dropzone.ADDED)
+          );
+        };
+        document.querySelector("#actions .cancel").onclick = function () {
+          myDropzone.removeAllFiles(true);
+        };
+        // DropzoneJS Demo Code End
+      });
     </script>
   </body>
 </html>

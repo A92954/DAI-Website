@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cidade amiga</title>
+    <title>AdminLTE 3 | Calendar</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -11,14 +11,25 @@
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
     />
     <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="../plugins/fullcalendar/main.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
+    <!-- SweetAlert2 -->
+    <script src="/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Select2 -->
     <link
       rel="stylesheet"
-      href="../../plugins/fontawesome-free/css/all.min.css"
+      href="/Frontend/Backoffice/Adaptado/plugins/select2/css/select2.min.css"
     />
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
+    <link
+      rel="stylesheet"
+      href="/Frontend/Backoffice/Adaptado/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
+    />
   </head>
   <body class="hold-transition sidebar-mini layout-navbar-fixed">
+    <!-- layout-fixed -->
     <div class="wrapper">
       <!-- Navbar -->
       <nav
@@ -47,7 +58,7 @@
                 <!-- Message Start -->
                 <div class="media">
                   <img
-                    src="../../dist/img/user1-128x128.jpg"
+                    src="../dist/img/user1-128x128.jpg"
                     alt="User Avatar"
                     class="img-size-50 mr-3 img-circle"
                   />
@@ -71,7 +82,7 @@
                 <!-- Message Start -->
                 <div class="media">
                   <img
-                    src="../../dist/img/user8-128x128.jpg"
+                    src="../dist/img/user8-128x128.jpg"
                     alt="User Avatar"
                     class="img-size-50 img-circle mr-3"
                   />
@@ -95,7 +106,7 @@
                 <!-- Message Start -->
                 <div class="media">
                   <img
-                    src="../../dist/img/user3-128x128.jpg"
+                    src="../dist/img/user3-128x128.jpg"
                     alt="User Avatar"
                     class="img-size-50 img-circle mr-3"
                   />
@@ -167,7 +178,7 @@
       >
         <!-- Brand Logo -->
         <a
-          href="/Frontend/Backoffice/Adaptado/index.html"
+          href="index.html"
           class="brand-link"
           style="background-color: #132453"
         >
@@ -223,29 +234,10 @@
                 </li>
               </div>
               <br />
-              <!-- esta opção só aparece para as instituições -->
-              <div style="background-color: #8f9dc3">
+              <!-- esta opção aparece sempre -->
+              <div style="background-color: #606a85">
                 <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/calendar.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon far fa-calendar-alt"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Calendário de atividades
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <!-- esta opção só aparece para as camaras -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/calendar_camaras.html"
-                    class="nav-link"
-                  >
+                  <a href="#" class="nav-link">
                     <i class="nav-icon far fa-calendar-alt"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Calendário de atividades
@@ -287,40 +279,8 @@
                 </li>
               </div>
               <br />
-              <!-- esta opção só aparece para as instituições -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/parceiros.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon fas fa-handshake"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Parceiros
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <!-- esta opção só aparece para as instituições -->
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a
-                    href="/Frontend/Backoffice/Adaptado/pages/tables/sugestoes.html"
-                    class="nav-link"
-                  >
-                    <i class="nav-icon fas fa-comment-dots"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      Sugestões
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
               <!-- esta opção aparece sempre -->
-              <div style="background-color: #606a85">
+              <div style="background-color: #8f9dc3">
                 <li class="nav-item">
                   <a
                     href="/Frontend/Backoffice/Adaptado/pages/examples/profile.html"
@@ -338,7 +298,10 @@
               <!-- esta opção aparece sempre -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a
+                    href="/Frontend/FrontOffice/bizpage-master/bizpage-master/index.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-house-user"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Logout
@@ -350,6 +313,7 @@
 
               <br />
               <br />
+
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               <li class="nav-item menu-open">
@@ -1036,7 +1000,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Página pessoal</h1>
+                <h1>Calendário de atividades</h1>
               </div>
             </div>
           </div>
@@ -1047,79 +1011,63 @@
         <section class="content">
           <div class="container-fluid">
             <div class="row">
-              <!-- /.col -->
-              <div class="col-md-12">
-                <div class="card">
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <div class="tab-content">
-                      <div class="active tab-pane" id="activity">
-                        <form class="form-horizontal">
-                          <div class="form-group row">
-                            <label
-                              for="inputName"
-                              class="col-sm-2 col-form-label"
-                              >Nome:</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputName"
-                                readonly
-                                value="Nome da camara/instituição"
-                              />
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label
-                              for="inputName2"
-                              class="col-sm-2 col-form-label"
-                              >Localidade:</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="inputName2"
-                                readonly
-                                value="Guimarães"
-                              />
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label
-                              for="inputEmail"
-                              class="col-sm-2 col-form-label"
-                              >Email:</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputEmail"
-                                readonly
-                                value="emailGuimarães@cmg.pt"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <div class="offset-sm-2 col-sm-10">
-                              <button
-                                type="button"
-                                class="btn btn-danger"
-                                data-toggle="modal"
-                                data-target="#alterarPass"
-                              >
-                                Alterar password
-                              </button>
-                            </div>
-                          </div>
-                        </form>
+              <div class="col-md-3">
+                <div class="sticky-top mb-3">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title">Atividades</h4>
+                    </div>
+                    <div class="card-body">
+                      <!-- the events -->
+                      <div id="external-events">
+                        <div
+                          class="external-event bg-success"
+                          data-toggle="modal"
+                          data-target="#MaisInfo"
+                        >
+                          Lunch
+                        </div>
+                        <div
+                          class="external-event bg-warning"
+                          data-toggle="modal"
+                          data-target="#MaisInfo"
+                        >
+                          Go home
+                        </div>
+                        <div
+                          class="external-event bg-info"
+                          data-toggle="modal"
+                          data-target="#MaisInfo"
+                        >
+                          Do homework
+                        </div>
+                        <div
+                          class="external-event bg-primary"
+                          data-toggle="modal"
+                          data-target="#MaisInfo"
+                        >
+                          Work on UI design
+                        </div>
+                        <div
+                          class="external-event bg-danger"
+                          data-toggle="modal"
+                          data-target="#MaisInfo"
+                        >
+                          Sleep tight
+                        </div>
                       </div>
                     </div>
-                    <!-- /.tab-content -->
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-md-9">
+                <div class="card card-primary">
+                  <div class="card-body p-0">
+                    <!-- THE CALENDAR -->
+                    <div id="calendar"></div>
                   </div>
                   <!-- /.card-body -->
                 </div>
@@ -1135,8 +1083,8 @@
       </div>
       <!-- /.content-wrapper -->
 
-      <div class="modal fade" id="alterarPass">
-        <div class="modal-dialog">
+      <div class="modal fade" id="MaisInfo">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <button
@@ -1150,40 +1098,82 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="input-group mb-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Antiga password"
-                    id="p-antiga"
-                    required
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-eye" onclick="verPass()"></span>
-                    </div>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputEmail4">Nome da atividade</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputEmail4"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Local</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputPassword4"
+                      readonly
+                    />
                   </div>
                 </div>
-                <div class="input-group mb-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Nova password"
-                    id="p-nova"
-                    required
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-eye" onclick="verPass()"></span>
-                    </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Data de inicio</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputEmail4"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Data de fim</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputPassword4"
+                      readonly
+                    />
                   </div>
                 </div>
-                <div class="modal-footer justify-content-between">
-                  <button type="submit" class="btn btn-primary">
-                    Confirmar
-                  </button>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Descrição</label>
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    style="resize: none"
+                    readonly
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Parceiros</label>
+                  <select
+                    class="select2bs4"
+                    multiple="multiple"
+                    style="width: 100%"
+                  >
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
                 </div>
               </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button
+                type="button"
+                class="btn btn-default toastsDefaultSuccess"
+              >
+                Divulgar
+              </button>
+              <button type="button" class="btn btn-primary">Submeter</button>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -1210,26 +1200,213 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+    <script src="../dist/js/adminlte.min.js"></script>
+    <!-- fullCalendar 2.2.5 -->
+    <script src="../plugins/moment/moment.min.js"></script>
+    <script src="../plugins/fullcalendar/main.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../../dist/js/demo.js"></script>
-
+    <script src="../dist/js/demo.js"></script>
+    <!-- Select2 -->
+    <script src="/Frontend/Backoffice/Adaptado/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Page specific script -->
     <script>
-      function verPass() {
-        var x = document.getElementById("p-antiga");
-        var y = document.getElementById("p-nova");
-        if (x.type === "password") {
-          x.type = "text";
-          y.type = "text";
-        } else {
-          x.type = "password";
-          y.type = "password";
+      $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+
+        //Initialize Select2 Elements
+        $(".select2bs4").select2({
+          theme: "bootstrap4",
+        });
+        /* initialize the external events
+     -----------------------------------------------------------------*/
+        function ini_events(ele) {
+          ele.each(function () {
+            // create an Event Object (https://fullcalendar.io/docs/event-object)
+            // it doesn't need to have a start or end
+            var eventObject = {
+              title: $.trim($(this).text()), // use the element's text as the event title
+            };
+
+            // store the Event Object in the DOM element so we can get to it later
+            $(this).data("eventObject", eventObject);
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+              zIndex: 1070,
+              revert: true, // will cause the event to go back to its
+              revertDuration: 0, //  original position after the drag
+            });
+          });
         }
-      }
+
+        ini_events($("#external-events div.external-event"));
+
+        /* initialize the calendar
+     -----------------------------------------------------------------*/
+        //Date for the calendar events (dummy data)
+        var date = new Date();
+        var d = date.getDate(),
+          m = date.getMonth(),
+          y = date.getFullYear();
+
+        var Calendar = FullCalendar.Calendar;
+        var Draggable = FullCalendar.Draggable;
+
+        var containerEl = document.getElementById("external-events");
+        var checkbox = document.getElementById("drop-remove");
+        var calendarEl = document.getElementById("calendar");
+
+        // initialize the external events
+        // -----------------------------------------------------------------
+
+        new Draggable(containerEl, {
+          itemSelector: ".external-event",
+          eventData: function (eventEl) {
+            return {
+              title: eventEl.innerText,
+              backgroundColor: window
+                .getComputedStyle(eventEl, null)
+                .getPropertyValue("background-color"),
+              borderColor: window
+                .getComputedStyle(eventEl, null)
+                .getPropertyValue("background-color"),
+              textColor: window
+                .getComputedStyle(eventEl, null)
+                .getPropertyValue("color"),
+            };
+          },
+        });
+
+        var calendar = new Calendar(calendarEl, {
+          headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay",
+          },
+          themeSystem: "bootstrap",
+          //Random default events
+          events: [
+            {
+              title: "All Day Event",
+              start: new Date(y, m, 1),
+              backgroundColor: "#f56954", //red
+              borderColor: "#f56954", //red
+              allDay: true,
+            },
+            {
+              title: "Long Event",
+              start: new Date(y, m, d - 5),
+              end: new Date(y, m, d - 2),
+              backgroundColor: "#f39c12", //yellow
+              borderColor: "#f39c12", //yellow
+            },
+            {
+              title: "Meeting",
+              start: new Date(y, m, d, 10, 30),
+              allDay: false,
+              backgroundColor: "#0073b7", //Blue
+              borderColor: "#0073b7", //Blue
+            },
+            {
+              title: "Lunch",
+              start: new Date(y, m, d, 12, 0),
+              end: new Date(y, m, d, 14, 0),
+              allDay: false,
+              backgroundColor: "#00c0ef", //Info (aqua)
+              borderColor: "#00c0ef", //Info (aqua)
+            },
+            {
+              title: "Birthday Party",
+              start: new Date(y, m, d + 1, 19, 0),
+              end: new Date(y, m, d + 1, 22, 30),
+              allDay: false,
+              backgroundColor: "#00a65a", //Success (green)
+              borderColor: "#00a65a", //Success (green)
+            },
+            {
+              title: "Click for Google",
+              start: new Date(y, m, 28),
+              end: new Date(y, m, 29),
+              url: "https://www.google.com/",
+              backgroundColor: "#3c8dbc", //Primary (light-blue)
+              borderColor: "#3c8dbc", //Primary (light-blue)
+            },
+          ],
+          editable: false,
+          locale: "pt",
+          droppable: true, // this allows things to be dropped onto the calendar !!!
+          drop: function (info) {
+            // is the "remove after drop" checkbox checked?
+            if (checkbox.checked) {
+              // if so, remove the element from the "Draggable Events" list
+              info.draggedEl.parentNode.removeChild(info.draggedEl);
+            }
+          },
+        });
+
+        calendar.render();
+        // $('#calendar').fullCalendar()
+
+        /* ADDING EVENTS */
+        var currColor = "#3c8dbc"; //Red by default
+        // Color chooser button
+        $("#color-chooser > li > a").click(function (e) {
+          e.preventDefault();
+          // Save color
+          currColor = $(this).css("color");
+          // Add color effect to button
+          $("#add-new-event").css({
+            "background-color": currColor,
+            "border-color": currColor,
+          });
+        });
+        $("#add-new-event").click(function (e) {
+          e.preventDefault();
+          // Get value and make sure it is not null
+          var val = $("#new-event").val();
+          if (val.length == 0) {
+            return;
+          }
+
+          // Create events
+          var event = $("<div />");
+          event
+            .css({
+              "background-color": currColor,
+              "border-color": currColor,
+              color: "#fff",
+            })
+            .addClass("external-event");
+          event.text(val);
+          $("#external-events").prepend(event);
+
+          // Add draggable funtionality
+          ini_events(event);
+
+          // Remove event from text input
+          $("#new-event").val("");
+        });
+        $(".toastsDefaultSuccess").click(function () {
+          $(document).Toasts("create", {
+            class: "bg-success",
+            title: "Atividade divulgada",
+            subtitle: "Registado",
+            body:
+              "A atividade em questão aparece agora nas recomendações, na aplcação.",
+          });
+        });
+      });
     </script>
   </body>
 </html>

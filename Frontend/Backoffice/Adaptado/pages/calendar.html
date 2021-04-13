@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
     <!-- SweetAlert2 -->
     <script src="/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Select2 -->
+    <link
+      rel="stylesheet"
+      href="/Frontend/Backoffice/Adaptado/plugins/select2/css/select2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Frontend/Backoffice/Adaptado/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
+    />
   </head>
   <body class="hold-transition sidebar-mini layout-navbar-fixed">
     <!-- layout-fixed -->
@@ -174,7 +183,7 @@
           style="background-color: #132453"
         >
           <img
-            src="/dist/img/cidadeAmigaLogo.png"
+            src="/Frontend/Backoffice/Adaptado/dist/img/cidadeAmigaLogo.png"
             alt="Cidade amiga Logo"
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
@@ -193,9 +202,13 @@
               role="menu"
               data-accordion="false"
             >
+              <!-- esta opção aparece sempre -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="/index.html" class="nav-link">
+                  <a
+                    href="/Frontend/Backoffice/Adaptado/index.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-th"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Dashboard
@@ -205,6 +218,7 @@
                 </li>
               </div>
               <br />
+              <!-- esta opção só aparece para as instituições -->
               <div style="background-color: #606a85">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
@@ -217,45 +231,77 @@
                 </li>
               </div>
               <br />
+              <!-- esta opção aparece sempre -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a
+                    href="/Frontend/Backoffice/Adaptado/pages/examples/contacts.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-edit"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
-                      Histórico de sugestões
+                      Histórico de atividades
                       <!-- <span class="right badge badge-danger">New</span> -->
                     </p>
                   </a>
                 </li>
               </div>
               <br />
+              <!-- esta opção só aparece para as instituições -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a
+                    href="/Frontend/Backoffice/Adaptado/pages/tables/parceiros.html"
+                    class="nav-link"
+                  >
+                    <i class="nav-icon fas fa-handshake"></i>
+                    <p style="padding-top: 10px; padding-bottom: 10px">
+                      Parceiros
+                      <!-- <span class="right badge badge-danger">New</span> -->
+                    </p>
+                  </a>
+                </li>
+              </div>
+              <br />
+              <!-- esta opção só aparece para as instituições -->
+              <div style="background-color: #8f9dc3">
+                <li class="nav-item">
+                  <a
+                    href="/Frontend/Backoffice/Adaptado/pages/tables/sugestoes.html"
+                    class="nav-link"
+                  >
+                    <i class="nav-icon fas fa-comment-dots"></i>
+                    <p style="padding-top: 10px; padding-bottom: 10px">
+                      Sugestões
+                      <!-- <span class="right badge badge-danger">New</span> -->
+                    </p>
+                  </a>
+                </li>
+              </div>
+              <br />
+              <!-- esta opção aparece sempre -->
+              <div style="background-color: #8f9dc3">
+                <li class="nav-item">
+                  <a
+                    href="/Frontend/Backoffice/Adaptado/pages/examples/profile.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-check-double"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
-                      Avaliações
+                      Perfil
                       <!-- <span class="right badge badge-danger">New</span> -->
                     </p>
                   </a>
                 </li>
               </div>
               <br />
+              <!-- esta opção aparece sempre -->
               <div style="background-color: #8f9dc3">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-house-user"></i>
-                    <p style="padding-top: 10px; padding-bottom: 10px">
-                      C.M. Guimarães
-                      <!-- <span class="right badge badge-danger">New</span> -->
-                    </p>
-                  </a>
-                </li>
-              </div>
-              <br />
-              <div style="background-color: #8f9dc3">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a
+                    href="/Frontend/FrontOffice/bizpage-master/bizpage-master/index.html"
+                    class="nav-link"
+                  >
                     <i class="nav-icon fas fa-house-user"></i>
                     <p style="padding-top: 10px; padding-bottom: 10px">
                       Logout
@@ -264,13 +310,14 @@
                   </a>
                 </li>
               </div>
+
               <br />
               <br />
 
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -279,31 +326,41 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="../index.html" class="nav-link">
+                    <a href="./index.html" class="nav-link active">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Dashboard v1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../index2.html" class="nav-link">
+                    <a href="./index2.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Dashboard v2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../index3.html" class="nav-link">
+                    <a href="./index3.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Dashboard v3</p>
                     </a>
                   </li>
                 </ul>
               </li>
+
               <li class="nav-item">
-                <a href="widgets.html" class="nav-link">
+                <a href="./index2.html" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
-                    Widgets
-                    <span class="right badge badge-danger">New</span>
+                    Histórico de sugestões
+                    <!-- <span class="right badge badge-danger">New</span> -->
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Avaliações
+                    <!-- <span class="right badge badge-danger">New</span> -->
                   </p>
                 </a>
               </li>
@@ -318,49 +375,58 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="layout/top-nav.html" class="nav-link">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Top Navigation</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="layout/top-nav-sidebar.html" class="nav-link">
+                    <a
+                      href="pages/layout/top-nav-sidebar.html"
+                      class="nav-link"
+                    >
                       <i class="far fa-circle nav-icon"></i>
                       <p>Top Navigation + Sidebar</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="layout/boxed.html" class="nav-link">
+                    <a href="pages/layout/boxed.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Boxed</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="layout/fixed-sidebar.html" class="nav-link">
+                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Fixed Sidebar</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="layout/fixed-sidebar-custom.html" class="nav-link">
+                    <a
+                      href="pages/layout/fixed-sidebar-custom.html"
+                      class="nav-link"
+                    >
                       <i class="far fa-circle nav-icon"></i>
                       <p>Fixed Sidebar <small>+ Custom Area</small></p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="layout/fixed-topnav.html" class="nav-link">
+                    <a href="pages/layout/fixed-topnav.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Fixed Navbar</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="layout/fixed-footer.html" class="nav-link">
+                    <a href="pages/layout/fixed-footer.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Fixed Footer</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="layout/collapsed-sidebar.html" class="nav-link">
+                    <a
+                      href="pages/layout/collapsed-sidebar.html"
+                      class="nav-link"
+                    >
                       <i class="far fa-circle nav-icon"></i>
                       <p>Collapsed Sidebar</p>
                     </a>
@@ -377,25 +443,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="charts/chartjs.html" class="nav-link">
+                    <a href="pages/charts/chartjs.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>ChartJS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="charts/flot.html" class="nav-link">
+                    <a href="pages/charts/flot.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Flot</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="charts/inline.html" class="nav-link">
+                    <a href="pages/charts/inline.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Inline</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="charts/uplot.html" class="nav-link">
+                    <a href="pages/charts/uplot.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>uPlot</p>
                     </a>
@@ -412,49 +478,49 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="UI/general.html" class="nav-link">
+                    <a href="pages/UI/general.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>General</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="UI/icons.html" class="nav-link">
+                    <a href="pages/UI/icons.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Icons</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="UI/buttons.html" class="nav-link">
+                    <a href="pages/UI/buttons.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Buttons</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="UI/sliders.html" class="nav-link">
+                    <a href="pages/UI/sliders.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Sliders</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="UI/modals.html" class="nav-link">
+                    <a href="pages/UI/modals.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Modals & Alerts</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="UI/navbar.html" class="nav-link">
+                    <a href="pages/UI/navbar.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Navbar & Tabs</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="UI/timeline.html" class="nav-link">
+                    <a href="pages/UI/timeline.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Timeline</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="UI/ribbons.html" class="nav-link">
+                    <a href="pages/UI/ribbons.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Ribbons</p>
                     </a>
@@ -471,25 +537,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="forms/general.html" class="nav-link">
+                    <a href="pages/forms/general.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>General Elements</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="forms/advanced.html" class="nav-link">
+                    <a href="pages/forms/advanced.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Advanced Elements</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="forms/editors.html" class="nav-link">
+                    <a href="pages/forms/editors.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Editors</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="forms/validation.html" class="nav-link">
+                    <a href="pages/forms/validation.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Validation</p>
                     </a>
@@ -506,19 +572,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="tables/simple.html" class="nav-link">
+                    <a href="pages/tables/simple.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Simple Tables</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="tables/data.html" class="nav-link">
+                    <a href="pages/tables/data.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>DataTables</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="tables/jsgrid.html" class="nav-link">
+                    <a href="pages/tables/jsgrid.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>jsGrid</p>
                     </a>
@@ -527,7 +593,7 @@
               </li>
               <li class="nav-header">EXAMPLES</li>
               <li class="nav-item">
-                <a href="calendar.html" class="nav-link active">
+                <a href="pages/calendar.html" class="nav-link">
                   <i class="nav-icon far fa-calendar-alt"></i>
                   <p>
                     Calendar
@@ -536,13 +602,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="gallery.html" class="nav-link">
+                <a href="pages/gallery.html" class="nav-link">
                   <i class="nav-icon far fa-image"></i>
                   <p>Gallery</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="kanban.html" class="nav-link">
+                <a href="pages/kanban.html" class="nav-link">
                   <i class="nav-icon fas fa-columns"></i>
                   <p>Kanban Board</p>
                 </a>
@@ -557,19 +623,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="mailbox/mailbox.html" class="nav-link">
+                    <a href="pages/mailbox/mailbox.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Inbox</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="mailbox/compose.html" class="nav-link">
+                    <a href="pages/mailbox/compose.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Compose</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="mailbox/read-mail.html" class="nav-link">
+                    <a href="pages/mailbox/read-mail.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Read</p>
                     </a>
@@ -586,61 +652,64 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="examples/invoice.html" class="nav-link">
+                    <a href="pages/examples/invoice.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Invoice</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/profile.html" class="nav-link">
+                    <a href="pages/examples/profile.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Profile</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/e-commerce.html" class="nav-link">
+                    <a href="pages/examples/e-commerce.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>E-commerce</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/projects.html" class="nav-link">
+                    <a href="pages/examples/projects.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Projects</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/project-add.html" class="nav-link">
+                    <a href="pages/examples/project-add.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Project Add</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/project-edit.html" class="nav-link">
+                    <a href="pages/examples/project-edit.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Project Edit</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/project-detail.html" class="nav-link">
+                    <a
+                      href="pages/examples/project-detail.html"
+                      class="nav-link"
+                    >
                       <i class="far fa-circle nav-icon"></i>
                       <p>Project Detail</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/contacts.html" class="nav-link">
+                    <a href="pages/examples/contacts.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Contacts</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/faq.html" class="nav-link">
+                    <a href="pages/examples/faq.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>FAQ</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/contact-us.html" class="nav-link">
+                    <a href="pages/examples/contact-us.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Contact us</p>
                     </a>
@@ -666,20 +735,20 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="examples/login.html" class="nav-link">
+                        <a href="pages/examples/login.html" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Login v1</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="examples/register.html" class="nav-link">
+                        <a href="pages/examples/register.html" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Register v1</p>
                         </a>
                       </li>
                       <li class="nav-item">
                         <a
-                          href="examples/forgot-password.html"
+                          href="pages/examples/forgot-password.html"
                           class="nav-link"
                         >
                           <i class="far fa-circle nav-icon"></i>
@@ -688,7 +757,7 @@
                       </li>
                       <li class="nav-item">
                         <a
-                          href="examples/recover-password.html"
+                          href="pages/examples/recover-password.html"
                           class="nav-link"
                         >
                           <i class="far fa-circle nav-icon"></i>
@@ -707,20 +776,23 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="examples/login-v2.html" class="nav-link">
+                        <a href="pages/examples/login-v2.html" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Login v2</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="examples/register-v2.html" class="nav-link">
+                        <a
+                          href="pages/examples/register-v2.html"
+                          class="nav-link"
+                        >
                           <i class="far fa-circle nav-icon"></i>
                           <p>Register v2</p>
                         </a>
                       </li>
                       <li class="nav-item">
                         <a
-                          href="examples/forgot-password-v2.html"
+                          href="pages/examples/forgot-password-v2.html"
                           class="nav-link"
                         >
                           <i class="far fa-circle nav-icon"></i>
@@ -729,7 +801,7 @@
                       </li>
                       <li class="nav-item">
                         <a
-                          href="examples/recover-password-v2.html"
+                          href="pages/examples/recover-password-v2.html"
                           class="nav-link"
                         >
                           <i class="far fa-circle nav-icon"></i>
@@ -739,49 +811,55 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/lockscreen.html" class="nav-link">
+                    <a href="pages/examples/lockscreen.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Lockscreen</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/legacy-user-menu.html" class="nav-link">
+                    <a
+                      href="pages/examples/legacy-user-menu.html"
+                      class="nav-link"
+                    >
                       <i class="far fa-circle nav-icon"></i>
                       <p>Legacy User Menu</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/language-menu.html" class="nav-link">
+                    <a
+                      href="pages/examples/language-menu.html"
+                      class="nav-link"
+                    >
                       <i class="far fa-circle nav-icon"></i>
                       <p>Language Menu</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/404.html" class="nav-link">
+                    <a href="pages/examples/404.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Error 404</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/500.html" class="nav-link">
+                    <a href="pages/examples/500.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Error 500</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/pace.html" class="nav-link">
+                    <a href="pages/examples/pace.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Pace</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="examples/blank.html" class="nav-link">
+                    <a href="pages/examples/blank.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Blank Page</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../starter.html" class="nav-link">
+                    <a href="starter.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Starter Page</p>
                     </a>
@@ -798,13 +876,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="search/simple.html" class="nav-link">
+                    <a href="pages/search/simple.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Simple Search</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="search/enhanced.html" class="nav-link">
+                    <a href="pages/search/enhanced.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Enhanced</p>
                     </a>
@@ -813,7 +891,7 @@
               </li>
               <li class="nav-header">MISCELLANEOUS</li>
               <li class="nav-item">
-                <a href="../iframe.html" class="nav-link">
+                <a href="iframe.html" class="nav-link">
                   <i class="nav-icon fas fa-ellipsis-h"></i>
                   <p>Tabbed IFrame Plugin</p>
                 </a>
@@ -943,27 +1021,37 @@
                       <!-- the events -->
                       <div id="external-events">
                         <div
-                          class="toastsDefaultSuccess external-event bg-success"
+                          class="external-event bg-success"
+                          data-toggle="modal"
+                          data-target="#MaisInfo2"
                         >
                           Lunch
                         </div>
                         <div
-                          class="toastsDefaultSuccess external-event bg-warning"
+                          class="external-event bg-warning"
+                          data-toggle="modal"
+                          data-target="#MaisInfo2"
                         >
                           Go home
                         </div>
                         <div
-                          class="toastsDefaultSuccess external-event bg-info"
+                          class="external-event bg-info"
+                          data-toggle="modal"
+                          data-target="#MaisInfo2"
                         >
                           Do homework
                         </div>
                         <div
-                          class="toastsDefaultSuccess external-event bg-primary"
+                          class="external-event bg-primary"
+                          data-toggle="modal"
+                          data-target="#MaisInfo2"
                         >
                           Work on UI design
                         </div>
                         <div
-                          class="toastsDefaultSuccess external-event bg-danger"
+                          class="external-event bg-danger"
+                          data-toggle="modal"
+                          data-target="#MaisInfo"
                         >
                           Sleep tight
                         </div>
@@ -1056,17 +1144,23 @@
                       />
                       <br />
                       <div class="custom-file">
-                        <input
-                          type="file"
-                          class="custom-file-input"
-                          id="customFile"
-                        />
-                        <label
-                          class="custom-file-label"
-                          style="color: rgb(147, 155, 162)"
-                          for="customFile"
-                          >Adicionar imagem</label
-                        >
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input
+                              type="file"
+                              class="custom-file-input"
+                              id="exampleInputFile"
+                            />
+                            <label
+                              class="custom-file-label"
+                              for="exampleInputFile"
+                              >Adicionar imagem</label
+                            >
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text">Carregar</span>
+                          </div>
+                        </div>
                       </div>
                       <!-- /input-group -->
                     </div>
@@ -1093,6 +1187,111 @@
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
+
+      <div class="modal fade" id="MaisInfo2">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputEmail4">Nome da atividade</label>
+                    <input type="text" class="form-control" id="inputEmail4" />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Local</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputPassword4"
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Data de inicio</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputEmail4"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Data de fim</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputPassword4"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Descrição</label>
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    style="resize: none"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Parceiros</label>
+                  <select
+                    class="select2bs4"
+                    multiple="multiple"
+                    style="width: 100%"
+                  >
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile2">Adicionar imagem</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input"
+                        id="exampleInputFile2"
+                      />
+                      <label
+                        class="custom-file-label"
+                        for="exampleInputFile2"
+                      ></label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text">Carregar</span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Submeter</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
       <footer class="main-footer">
         <div class="float-right d-none d-sm-block"><b>Version</b> 3.1.0-rc</div>
@@ -1128,9 +1327,20 @@
     <script src="../plugins/fullcalendar/main.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="/Frontend/Backoffice/Adaptado/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- Select2 -->
+    <script src="/Frontend/Backoffice/Adaptado/plugins/select2/js/select2.full.min.js"></script>
     <!-- Page specific script -->
     <script>
       $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+
+        //Initialize Select2 Elements
+        $(".select2bs4").select2({
+          theme: "bootstrap4",
+        });
         /* initialize the external events
      -----------------------------------------------------------------*/
         function ini_events(ele) {
@@ -1247,6 +1457,7 @@
             },
           ],
           editable: true,
+          locale: "pt",
           droppable: true, // this allows things to be dropped onto the calendar !!!
           drop: function (info) {
             // is the "remove after drop" checkbox checked?
@@ -1290,6 +1501,7 @@
               color: "#fff",
             })
             .addClass("external-event");
+
           event.text(val);
           $("#external-events").prepend(event);
 
@@ -1299,17 +1511,7 @@
           // Remove event from text input
           $("#new-event").val("");
         });
-      });
-    </script>
-
-    <script>
-      $(".toastsDefaultSuccess").click(function () {
-        $(document).Toasts("create", {
-          class: "bg-success",
-          title: "Atividade publicitada",
-          subtitle: "",
-          body: "A atividade selecionada foi publicitada com sucesso.",
-        });
+        bsCustomFileInput.init();
       });
     </script>
   </body>
