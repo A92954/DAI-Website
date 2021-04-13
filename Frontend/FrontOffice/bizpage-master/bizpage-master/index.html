@@ -57,25 +57,30 @@
             <li><a href="#services">Aplicação</a></li>
             <li><a href="#portfolio">Contactos</a></li>
             <!--<li><a href="#team">Team</a></li>-->
-            <li class="coisalinda">
-              <input
-                type="button"
-                name="botao-ok"
-                value="Login"
-                style="
-                  background-color: #9dddeb;
-                  border-radius: 10px;
-                  padding: 7px;
-                  font-family: cursive;
-                  cursor: pointer;
-                  position: relative;
-                  color: #132453;
-                  border: 0px;
-                  top: -7px;
-                  left: 10px;
-                  width: 100px;
-                "
-              />
+            <li class="container">
+              <center>
+                <button
+                  type="button"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#myModal"
+                  style="
+                    background-color: #9dddeb;
+                    border: none;
+                    color: #132453;
+                    padding: 5px 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    position: relative;
+                    left: 220px;
+                    bottom: 35px;
+                  "
+                >
+                  Login
+                </button>
+              </center>
             </li>
           </ul>
         </nav>
@@ -83,6 +88,33 @@
       </div>
     </header>
     <!-- #header -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" />
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" /> Lembrar-me</label>
+              </div>
+              <button type="submit" class="btn btn-default">Entrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--==========================
     Intro Section
@@ -342,7 +374,7 @@
 
             <div class="testimonial-item">
               <img
-                src="/img/clients/image 36.png"
+                src="img/clients/image 36.png"
                 class="testimonial-img"
                 alt=""
               />
@@ -357,7 +389,7 @@
 
             <div class="testimonial-item">
               <img
-                src="/img/clients/image 37.png"
+                src="img/clients/image 37.png"
                 class="testimonial-img"
                 alt=""
               />
@@ -372,7 +404,7 @@
 
             <div class="testimonial-item">
               <img
-                src="/img/clients/image 38.png"
+                src="img/clients/image 38.png"
                 class="testimonial-img"
                 alt=""
               />
@@ -389,7 +421,7 @@
 
             <div class="testimonial-item">
               <img
-                src="/img/clients/image 39.png"
+                src="img/clients/image 39.png"
                 class="testimonial-img"
                 alt=""
               />
@@ -404,9 +436,21 @@
         </div>
       </section>
 
+      <!--<div class="container">
+        <img
+          src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/85.jpg"
+          alt="together"
+          style="width: 100%"
+        />
+        <div class="text-block2">
+          <h4>Nature</h4>
+          <p>What a beautiful sunrise</p>
+        </div>
+      </div>-->
+
       <section id="call-to-action" class="wow fadeIn" style="height: 400px">
         <img
-          src="/img/clients/Cidade_Amiga.png"
+          src="img/clients/Cidade_Amiga.png"
           alt="CidadeAmiga"
           style="
             width: 25%;
@@ -461,6 +505,11 @@
                   políticas coordenadas para a infância e adolescência
                 </p>
               </div>
+              <img
+                src="/bizpage-master/img/clients/unicef-icon-4.jpg"
+                alt="unicef"
+                style="position: relative; bottom: 70px; left: 300px"
+              />
             </div>
           </div>
         </div>
