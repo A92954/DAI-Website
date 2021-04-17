@@ -10,7 +10,7 @@
     <!-- Favicons -->
     <!--<link href="img/favicon.png" rel="icon" />-->
     <link
-      href="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/apple-touch-icon.png"
+      href="/FrontOffice/bizpage-master/bizpage-master/img/apple-touch-icon.png"
       rel="apple-touch-icon"
     />
 
@@ -59,27 +59,31 @@
             <li><a href="#about">Eventos</a></li>
             <li><a href="#services">Aplicação</a></li>
             <li><a href="#portfolio">Contactos</a></li>
-            <!--<li><a href="#team">Team</a></li>-->
-            <li class="coisalinda">
-              <a href="/Frontend/Backoffice/Adaptado/index.html">
-                <input
+            <li class="container">
+              <center>
+                <button
                   type="button"
-                  name="botao-ok"
-                  value="Login"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#myModal"
                   style="
                     background-color: #9dddeb;
-                    border-radius: 10px;
-                    padding: 7px;
-                    font-family: cursive;
-                    cursor: pointer;
-                    position: relative;
+                    border: none;
                     color: #132453;
-                    border: 0px;
-                    top: -7px;
-                    left: 10px;
-                    width: 100px;
+                    padding: 5px 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    position: relative;
+                    left: 220px;
+                    bottom: 35px;
                   "
-                />
+                >
+                  Login
+                </button>
+              </center>
+            </li>
               </a>
             </li>
           </ul>
@@ -88,6 +92,33 @@
       </div>
     </header>
     <!-- #header -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" />
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" /> Lembrar-me</label>
+              </div>
+              <button type="submit" class="btn btn-default">Entrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--==========================
     Intro Section
@@ -105,7 +136,7 @@
             <div
               class="carousel-item active"
               style="
-                background-image: url('/Frontend/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/20.jpg');
+                background-image: url('/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/20.jpg');
               "
             >
               <div class="carousel-container">
@@ -119,7 +150,7 @@
             <div
               class="carousel-item"
               style="
-                background-image: url('/Frontend/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/16.jpg');
+                background-image: url('/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/16.jpg');
               "
             >
               <div class="carousel-container">
@@ -142,7 +173,7 @@
             <div
               class="carousel-item"
               style="
-                background-image: url('/Frontend/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/17.jpg');
+                background-image: url('/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/17.jpg');
               "
             >
               <div class="carousel-container">
@@ -165,7 +196,7 @@
             <div
               class="carousel-item"
               style="
-                background-image: url('/Frontend/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/4.jpg');
+                background-image: url('/FrontOffice/bizpage-master/bizpage-master/img/intro-carousel/4.jpg');
               "
             >
               <div class="carousel-container">
@@ -261,7 +292,7 @@
               <div class="about-col">
                 <div class="img">
                   <img
-                    src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/about-mission.jpg"
+                    src="/FrontOffice/bizpage-master/bizpage-master/img/about-mission.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -278,7 +309,7 @@
               <div class="about-col">
                 <div class="img">
                   <img
-                    src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/about-plan.jpg"
+                    src="/FrontOffice/bizpage-master/bizpage-master/img/about-plan.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -293,7 +324,7 @@
               <div class="about-col">
                 <div class="img">
                   <img
-                    src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/about-vision.jpg"
+                    src="/FrontOffice/bizpage-master/bizpage-master/img/about-vision.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -351,7 +382,7 @@
           <div class="owl-carousel testimonials-carousel">
             <div class="testimonial-item">
               <img
-                src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image 8.png"
+                src="/FrontOffice/bizpage-master/bizpage-master/img/clients/image 8.png"
                 class="testimonial-img"
                 alt=""
               />
@@ -366,11 +397,8 @@
             </div>
 
             <div class="testimonial-item">
-              <img
-                src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image 36.png"
-                class="testimonial-img"
-                alt=""
-              />
+              <img src="/FrontOffice/bizpage-master/bizpage-master/img/clients/image 36.png" 
+              class="testimonial-img" alt="" />
               <h3>Eficácia</h3>
               <p>
                 <img class="quote-sign-left" alt="" />
@@ -381,11 +409,10 @@
             </div>
 
             <div class="testimonial-item">
-              <img
-                src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image 37.png"
-                class="testimonial-img"
-                alt=""
-              />
+              <img src="/FrontOffice/bizpage-master/bizpage-master/img/clients/image 37.png" 
+              src="/bizpage-master/img/clients/image
+              37.png"
+              class="testimonial-img" alt="" />
               <h3>Eficiência</h3>
               <p>
                 <img class="quote-sign-left" alt="" />
@@ -396,11 +423,10 @@
             </div>
 
             <div class="testimonial-item">
-              <img
-                src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image 38.png"
-                class="testimonial-img"
-                alt=""
-              />
+              <img src="/FrontOffice/bizpage-master/bizpage-master/img/clients/image 38.png"
+              src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image
+              38.png"
+              class="testimonial-img" alt="" />
               <h3>Impacto</h3>
               <p>
                 <img class="quote-sign-left" alt="" />
@@ -413,11 +439,9 @@
             </div>
 
             <div class="testimonial-item">
-              <img
-                src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image 39.png"
-                class="testimonial-img"
-                alt=""
-              />
+              <img src="img/clients/image 39.png" 
+              src="/FrontOffice/bizpage-master/bizpage-master/img/clients/image 39.png"
+              class="testimonial-img" alt="" />
               <h3>Sustentabilidade</h3>
               <p>
                 <img class="quote-sign-left" alt="" />
@@ -429,33 +453,15 @@
         </div>
       </section>
 
-      <section id="call-to-action" class="wow fadeIn" style="height: 400px">
-        <img
-          src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/Cidade_Amiga.png"
-          alt="CidadeAmiga"
-          style="
-            width: 25%;
-            position: relative;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            top: 150px;
-          "
-        />
 
-        <!--<img
-          src="/img/clients/PlayStore.png"
-          alt="Play_Store"
-          style="
-            width: 25%;
-            position: relative;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            left: 350px;
-            top: 0px;
-          "
-        />-->
+
+
+      <section id="call-to-action" class="wow fadeIn" style="height: 400px">
+        <img src="img/clients/Cidade_Amiga.png"
+        src="/FrontOffice/bizpage-master/bizpage-master/img/clients/Cidade_Amiga.png" alt="CidadeAmiga"
+        style=" width: 25%; position: relative; display: block; margin-left:
+        auto; margin-right: auto; top: 150px; " />
+
 
         <div class="container text-center">
           <h3>Adquire a nossa Aplicação!</h3>
@@ -486,6 +492,11 @@
                   políticas coordenadas para a infância e adolescência
                 </p>
               </div>
+              <img
+                src="/FrontOffice/bizpage-master/bizpage-master/img/clients/unicef-icon-4.jpg"
+                alt="unicef"
+                style="position: relative; bottom: 70px; left: 300px"
+              />
             </div>
           </div>
         </div>
