@@ -348,17 +348,20 @@
                   <!-- /.card-header -->
                   <div class="card-body">
                     <table
-                      id="example1"
+                      id="tabela-sugestoes"
                       class="table table-bordered table-striped"
                     >
                       <thead>
                         <tr>
-                          <th>Nome atividade</th>
+                          <th>ID Criança</th>
                           <th>Descrição</th>
                           <th></th>
                         </tr>
                       </thead>
                       <tbody>
+                        <!-- 
+
+                          
                         <tr>
                           <td>Palhaçada</td>
                           <td>
@@ -518,10 +521,12 @@
                             </button>
                           </td>
                         </tr>
+
+                         -->
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>Nome atividade</th>
+                          <th>ID Criança</th>
                           <th>Descrição</th>
                           <th></th>
                         </tr>
@@ -580,10 +585,13 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+
+    <!-- Controllers -->
+    <script src="/Frontend/Backoffice/Adaptado/controllers/controller_tabelas.js"></script>
     <!-- Page specific script -->
     <script>
       $(function () {
-        $("#example1")
+        $("#tabela-sugestoes")
           .DataTable({
             responsive: true,
             lengthChange: false,
@@ -614,7 +622,7 @@
           })
           .buttons()
           .container()
-          .appendTo("#example1_wrapper .col-md-6:eq(0)");
+          .appendTo("#tabela-sugestoes_wrapper .col-md-6:eq(0)");
         $("#example2").DataTable({
           paging: true,
           lengthChange: false,
@@ -632,8 +640,8 @@
             body: "A sugestão foi aceite com sucesso.",
           });
         });
-        $("#example1").on("click", ".remove", function () {
-          var table = $("#example1").DataTable();
+        $("#tabela-sugestoes").on("click", ".remove", function () {
+          var table = $("#tabela-sugestoes").DataTable();
           var row = $(this).parents("tr");
 
           if ($(row).hasClass("child")) {

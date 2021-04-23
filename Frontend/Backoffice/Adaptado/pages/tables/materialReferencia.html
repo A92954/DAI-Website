@@ -500,7 +500,7 @@
                   <!-- /.card-header -->
                   <div class="card-body">
                     <table
-                      id="example1"
+                      id="tabela-m-referencia"
                       class="table table-bordered table-striped"
                     >
                       <thead>
@@ -512,7 +512,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <!--
+
+                          <tr>
                           <td>Palhaçada</td>
                           <td>
                             Lorem ipsum dolor sit, amet consectetur adipisicing
@@ -764,6 +766,8 @@
                             </a>
                           </td>
                         </tr>
+
+                        -->
                       </tbody>
                       <tfoot>
                         <tr>
@@ -911,10 +915,13 @@
     <script src="../../dist/js/demo.js"></script>
     <!-- dropzonejs -->
     <script src="../../plugins/dropzone/min/dropzone.min.js"></script>
+    <!-- Controllers -->
+    <script src="/Frontend/Backoffice/Adaptado/controllers/controller_tabelas.js"></script>
+    <script src="/Frontend/Backoffice/Adaptado/controllers/controller_upload.js"></script>
     <!-- Page specific script -->
     <script>
       $(function () {
-        $("#example1")
+        $("#tabela-m-referencia")
           .DataTable({
             responsive: true,
             lengthChange: false,
@@ -944,7 +951,7 @@
           })
           .buttons()
           .container()
-          .appendTo("#example1_wrapper .col-md-6:eq(0)");
+          .appendTo("#tabela-m-referencia_wrapper .col-md-6:eq(0)");
         $("#example2").DataTable({
           paging: true,
           lengthChange: false,
@@ -1014,8 +1021,8 @@
           myDropzone.removeAllFiles(true);
         };
         // DropzoneJS Demo Code End
-        $("#example1").on("click", ".remove", function () {
-          var table = $("#example1").DataTable();
+        $("#tabela-m-referencia").on("click", ".remove", function () {
+          var table = $("#tabela-m-referencia").DataTable();
           var row = $(this).parents("tr");
 
           if ($(row).hasClass("child")) {
