@@ -827,7 +827,8 @@
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="Activity">Atividade</label>
-                   <input name="id_activity" type="text" class="form-control" id="Activity" disabled/>
+                   <!-- <input name="id_activity" type="text" class="form-control" id="Activity" disabled/> -->
+                   <select name="id_activity" id="activities1" style="margin-left: 5%; position:absolute" placeholder="Actividade"> </select>
                   </div>
                 </div>
                 <div class="form-group">
@@ -1037,9 +1038,9 @@
               <form method="POST" action="http://161.230.18.89:8080/DAI_backend/register_evaluation_plan">
                 <div class="form-group">
                   
-                    <label for="inputEmail4">Atividade</label>
-                    <input type="text" class="form-control" id="inputEmail4" disabled/>   
-                    
+                    <label for="idactivity">Atividade</label>
+                    <!-- <input type="text" class="form-control" id="inputEmail4" disabled/> -->   
+                    <select name="id_activity" id="activities" style="margin-left: 5%; position:absolute" placeholder="Actividade"> </select>
                   
                 </div>
                 <div class="form-group">
@@ -1233,22 +1234,32 @@
       function bloq3(){
         document.getElementById("botao-avaliar").disabled = true;
       }
+
       //formulários
-      function ler(){
-        (async ()=>{
-                var strHtml = "";
-                var ents = document.getElementById("Activity")
-                const response = await fetch('http://161.230.18.89:8080/DAI_backend/read_activity');
-                const Activity = await response.json();
+      (async ()=>{
+        var strHtml = "";
+        var ents = document.getElementById("activities");
+        const response = await fetch('http://161.230.18.89:8080/DAI_backend/read_activity');
+        const activities12 = await response.json();
+        for(const activity of activities12){
+          strHtml+= `<option name="${activity.id_activity}" value="${activity.id_activity}"> ${activity.name}</option>`
+          console.log("activity:" + activity.name)
+        }
+        ents.innerHTML=strHtml;
+      })();
 
-                for(const activity of Activity){
-                strHtml+= <option name="id_activity" value="${activity.id_activity}"> ${activity.name}</option>
-                console.log("activity" +activity.id_activity)
-                ents.innerHTML=strHtml;
-                }
+      (async ()=>{
+        var strHtml = "";
+        var ents = document.getElementById("activities1");
+        const response = await fetch('http://161.230.18.89:8080/DAI_backend/read_activity');
+        const activities14 = await response.json();
+        for(const activity of activities14){
+          strHtml+= `<option value="${activity.id_activity}"> ${activity.name}</option>`
+          console.log("activity:" + activity.name)
+        }
+        ents.innerHTML=strHtml;
+      })();
 
-            })();
-      }
     </script>
   </body>
 </html>

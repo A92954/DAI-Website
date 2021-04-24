@@ -3,9 +3,21 @@ window.onload = function () {
   tabelaMateriais();
   tabelaParceiros();
   tabelaSugestoes();
+  listAtividades();
 };
 
 //preenchimento da tabela das Atividades
+// function listAtividades() {
+//   let table = $("#example1").dataTable();
+//   fetch("http://161.230.18.89:8080/DAI_backend/read_activity")
+//     .then((res) => res.json())
+//     .then((out) => {
+//       $.each(out, function (index, value) {
+//         table.row.add([value.name, value.city, value.name_institution]).draw();
+//       });
+//     })
+//     .catch((err) => console.error(err));
+// }
 function tabelaAtividades() {
   let table = $("example1").DataTable();
   fetch("http://161.230.18.89:8080/DAI_backend/read_activity", {
@@ -23,6 +35,9 @@ function tabelaAtividades() {
             "</td>" +
             "<td>" +
             valor.city +
+            "</td>" +
+            "<td>" +
+            valor.name_institution +
             "</td>" +
             "<td>" +
             valor.name_institution +
