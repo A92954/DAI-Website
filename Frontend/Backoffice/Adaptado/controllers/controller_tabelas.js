@@ -7,6 +7,7 @@ window.onload = function () {
 };
 
 //preenchimento da tabela das Atividades
+
 // function listAtividades() {
 //   let table = $("#example1").dataTable();
 //   fetch("http://161.230.18.89:8080/DAI_backend/read_activity")
@@ -18,6 +19,7 @@ window.onload = function () {
 //     })
 //     .catch((err) => console.error(err));
 // }
+
 function tabelaAtividades() {
   let table = $("example1").DataTable();
   fetch("http://161.230.18.89:8080/DAI_backend/read_activity", {
