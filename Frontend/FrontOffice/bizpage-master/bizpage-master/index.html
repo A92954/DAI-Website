@@ -10,7 +10,7 @@
     <!-- Favicons -->
     <!--<link href="img/favicon.png" rel="icon" />-->
     <link
-      href="/FrontOffice/bizpage-master/bizpage-master/img/apple-touch-icon.png"
+      href="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/apple-touch-icon.png"
       rel="apple-touch-icon"
     />
 
@@ -105,19 +105,25 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <!-- <form action="/Frontend/Backoffice/Adaptado/index.html"> -->
+              <form action ="http://161.230.18.89:8080/DAI_backend/login"  method ="POST" class="form"></form>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" />
+                <input type="email" class="form-control" name="email" placeholder="email" id="email" />
+               <!--  <input type="email" class="form-control" id="email" /> -->
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" />
+               <!--  <input type="password" class="form-control" id="pwd" /> -->
+                <input type="password" class="form-control" name="password" placeholder="Password" id="pwd" />
               </div>
               <div class="checkbox">
                 <label><input type="checkbox" /> Lembrar-me</label>
               </div>
-              <button type="submit" class="btn btn-default">Entrar</button>
+              <!--<a href="http://127.0.0.1:5500/Frontend/Backoffice/Adaptado/index.html" class="btn btn-primary btn-user btn-block">
+                Login
+              </a>-->
+            <button class="btn btn-default" type="submit" id="SumbitLogin" onclick="getCookie()">Entrar</button>
             </form>
           </div>
         </div>
@@ -414,7 +420,7 @@
 
             <div class="testimonial-item">
               <img src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image 37.png" 
-              src="/bizpage-master/img/clients/image
+              src="/Frontend/bizpage-master/img/clients/image
               37.png"
               class="testimonial-img" alt="" />
               <h3>Eficiência</h3>
@@ -444,7 +450,7 @@
 
             <div class="testimonial-item">
               <img src="img/clients/image 39.png" 
-              src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/clients/image 39.png"
+              src="/FrontOffice/bizpage-master/bizpage-master/img/clients/image 39.png"
               class="testimonial-img" alt="" />
               <h3>Sustentabilidade</h3>
               <p>
@@ -515,7 +521,7 @@
               <div class="portfolio-wrap">
                 <figure>
                   <img src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/Festas.jpg" class="img-fluid" alt="">
-                  <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/Festas.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </figure>
   
@@ -759,7 +765,6 @@
                   data-rule="required"
                   data-msg="Por favor, escreva algo para nós"
                   placeholder="Mensagem"
-                  style="resize: none;"
                 ></textarea>
                 <div class="validation"></div>
               </div>
@@ -796,7 +801,8 @@
     <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
     <!-- Contact Form JavaScript File -->
     <script src="contactform/contactform.js"></script>
-
+<!-- Controllers -->
+<script src="/Frontend/Backoffice/Adaptado/controllers/cookie.js"></script>
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>
   </body>

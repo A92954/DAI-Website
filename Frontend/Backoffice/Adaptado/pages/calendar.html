@@ -47,90 +47,6 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-          <!-- Messages Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="far fa-comments" style="color: white"></i>
-              <span class="badge badge-danger navbar-badge">3</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img
-                    src="../dist/img/user1-128x128.jpg"
-                    alt="User Avatar"
-                    class="img-size-50 mr-3 img-circle"
-                  />
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      Brad Diesel
-                      <span class="float-right text-sm text-danger"
-                        ><i class="fas fa-star"></i
-                      ></span>
-                    </h3>
-                    <p class="text-sm">Call me whenever you can...</p>
-                    <p class="text-sm text-muted">
-                      <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                    </p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img
-                    src="../dist/img/user8-128x128.jpg"
-                    alt="User Avatar"
-                    class="img-size-50 img-circle mr-3"
-                  />
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      John Pierce
-                      <span class="float-right text-sm text-muted"
-                        ><i class="fas fa-star"></i
-                      ></span>
-                    </h3>
-                    <p class="text-sm">I got your message bro</p>
-                    <p class="text-sm text-muted">
-                      <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                    </p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img
-                    src="../dist/img/user3-128x128.jpg"
-                    alt="User Avatar"
-                    class="img-size-50 img-circle mr-3"
-                  />
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      Nora Silvester
-                      <span class="float-right text-sm text-warning"
-                        ><i class="fas fa-star"></i
-                      ></span>
-                    </h3>
-                    <p class="text-sm">The subject goes here</p>
-                    <p class="text-sm text-muted">
-                      <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                    </p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer"
-                >See All Messages</a
-              >
-            </div>
-          </li>
           <!-- Notifications Dropdown Menu -->
           <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
@@ -178,7 +94,7 @@
       >
         <!-- Brand Logo -->
         <a
-          href="index.html"
+          href="/Frontend/Backoffice/Adaptado/index.html"
           class="brand-link"
           style="background-color: #132453"
         >
@@ -432,64 +348,78 @@
                       </div>
                       <!-- /btn-group -->
                       <div class="input-group">
-                        <input
-                          id="new-event"
-                          type="text"
-                          class="form-control"
-                          placeholder="Nome da atividade"
-                          required
-                        />
-
-                        <div class="input-group-append">
+                        <form
+                          method="POST"
+                          action="http://161.230.18.89:8080/DAI_backend/register_activity"
+                        >
+                          <div class="form-group">
+                            <input
+                              id="new-event"
+                              name="activity_name"
+                              type="text"
+                              class="form-control"
+                              placeholder="Nome da atividade"
+                              required
+                            />
+                            <br />
+                            <input
+                              id="new-event-cidade"
+                              type="text"
+                              class="form-control"
+                              placeholder="Cidade"
+                              name="activity_city"
+                              required
+                            />
+                            <br />
+                            <input
+                              id="new-event-descricao"
+                              type="text"
+                              class="form-control"
+                              placeholder="Descrição"
+                              name="activity_local"
+                              required
+                            />
+                            <br />
+                            <input
+                              id="new-event-parceiros"
+                              type="text"
+                              class="form-control"
+                              placeholder="Parceiros"
+                              name="id_institution"
+                            />
+                            <br />
+                            <div class="custom-file">
+                              <div class="input-group">
+                                <div class="custom-file">
+                                  <input
+                                    type="file"
+                                    class="custom-file-input"
+                                    id="new-event-imagem"
+                                    name="document"
+                                  />
+                                  <label
+                                    class="custom-file-label"
+                                    for="new-event-imagem"
+                                    >Adicionar imagem</label
+                                  >
+                                </div>
+                                <div class="input-group-append">
+                                  <span class="input-group-text">Carregar</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- /input-group -->
+                          </div>
                           <button
                             id="add-new-event"
-                            type="button"
+                            type="submit"
+                            class="btn btn-primary"
                             class="btn btn-primary"
                           >
                             Criar
                           </button>
-                        </div>
-                        <!-- /btn-group -->
+                        </form>
                       </div>
-                      <br />
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Local"
-                      />
-                      <br />
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Descrição"
-                      />
-                      <br />
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Parceiros"
-                      />
-                      <br />
-                      <div class="custom-file">
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input
-                              type="file"
-                              class="custom-file-input"
-                              id="exampleInputFile"
-                            />
-                            <label
-                              class="custom-file-label"
-                              for="exampleInputFile"
-                              >Adicionar imagem</label
-                            >
-                          </div>
-                          <div class="input-group-append">
-                            <span class="input-group-text">Carregar</span>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- /input-group -->
                     </div>
                   </div>
                 </div>
@@ -815,7 +745,9 @@
           e.preventDefault();
           // Get value and make sure it is not null
           var val = $("#new-event").val();
-          if (val.length == 0) {
+          var val2 = $("#new-event-cidade").val();
+          var val3 = $("#new-event-descricao").val();
+          if (val.length == 0 && val2.length == 0 && val3.length == 0) {
             return;
           }
 
