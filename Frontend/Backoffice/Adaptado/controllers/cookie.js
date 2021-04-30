@@ -1,3 +1,7 @@
+window.onload = function () {
+  getCookie();
+};
+
 function getCookie() {
   const email = document.getElementById("email").value;
 
