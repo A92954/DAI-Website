@@ -83,7 +83,7 @@ function modalAtividades() {
     .then((out) => {
       $.each(out, function (index, valor) {
         var nomeAtividade = valor.name;
-        var localAtividade = valor.activity_local;
+        var localAtividade = valor.city;
         var dataInicioAtividade = valor.start_date;
         var dataFimAtividade = valor.end_date;
         var descricaoAtividade = valor.description;

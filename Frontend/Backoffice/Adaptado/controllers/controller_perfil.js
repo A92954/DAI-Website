@@ -4,7 +4,7 @@ window.onload = function () {
   var passwordUtilizador;
   var emailUtilizador;
 
-  fetch("http://161.230.18.89:8080/DAI_backend/read_user", {
+  fetch("http://localhost:8080/DAI_backend/read_user", {
     headers: { "Content-Type": "application/json" },
     method: "GET",
   })
