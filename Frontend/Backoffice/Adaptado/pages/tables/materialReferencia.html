@@ -273,13 +273,17 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <form>
+                    <form
+                      method="POST"
+                      action="http://localhost:8080/DAI_backend/register_material_reference"
+                    >
                       <div class="form-group">
                         <label for="titulo1">Título</label>
                         <input
                           type="text"
                           class="form-control"
                           id="titulo1"
+                          name="title"
                           required
                         />
                       </div>
@@ -288,6 +292,7 @@
                         <textarea
                           class="form-control"
                           id="descricao1"
+                          name="description"
                           cols="3"
                           rows="3"
                           style="resize: none"
@@ -307,6 +312,8 @@
                               <button
                                 type="submit"
                                 class="btn btn-primary col start"
+                                id="b-adicionar"
+                                onclick="AddFile()"
                               >
                                 <i class="fas fa-upload"></i>
                                 <span>Carregar</span>
@@ -947,6 +954,23 @@
             table.row($(this).parents("tr")).remove().draw();
           }
         });
+        // Adicionar ficheiros ao material de referencia
+        function AddFile() {
+          var data = {};
+          data.title = document.getElementById("titulo1").value;
+          data.file = document.getElementById("b-adicionar").value;
+          console.log(data);
+
+          fetch("http://localhost:8080/DAI_backend/update_material_reference", {
+            headers: { "Content-Type": "application/json" },
+            method: "PUT",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("Success:", data);
+            })
+            .catch((err) => console.error(err));
+        }
       });
     </script>
   </body>

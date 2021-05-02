@@ -310,8 +310,8 @@
                                 type="email"
                                 class="form-control"
                                 id="inputName"
+                                value="test"
                                 readonly
-                                value="Nome da camara/instituição"
                               />
                             </div>
                           </div>
@@ -393,21 +393,10 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
-                <div class="input-group mb-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Antiga password"
-                    id="p-antiga"
-                    required
-                  />
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-eye" onclick="verPass()"></span>
-                    </div>
-                  </div>
-                </div>
+              <form
+                method="PUT"
+                action="http://161.230.18.89:8080/DAI_backend/update_institution"
+              >
                 <div class="input-group mb-3">
                   <input
                     type="password"
@@ -422,8 +411,28 @@
                     </div>
                   </div>
                 </div>
+                <div class="input-group mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Repetir a nova password"
+                    id="p-nova2"
+                    required
+                  />
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-eye" onclick="verPass2()"></span>
+                    </div>
+                  </div>
+                </div>
                 <div class="modal-footer justify-content-between">
-                  <button type="submit" class="btn btn-primary">
+                  <button
+                    type="button"
+                    id="btnSubmit"
+                    value="Submit"
+                    onclick="return Validate()"
+                    class="btn btn-primary"
+                  >
                     Confirmar
                   </button>
                 </div>
@@ -461,18 +470,40 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- Controllers -->
+    <script src="/Frontend/Backoffice/Adaptado/controllers/controller_perfil.js"></script>
 
     <script>
       function verPass() {
-        var x = document.getElementById("p-antiga");
-        var y = document.getElementById("p-nova");
+        var x = document.getElementById("p-nova");
         if (x.type === "password") {
           x.type = "text";
-          y.type = "text";
         } else {
           x.type = "password";
+        }
+      }
+      function verPass2() {
+        var y = document.getElementById("p-nova2");
+        if (y.type === "password") {
+          y.type = "text";
+        } else {
           y.type = "password";
         }
+      }
+      function Validate() {
+        var password = document.getElementById("p-nova").value;
+        var confirmPassword = document.getElementById("p-nova2").value;
+        if (password != confirmPassword) {
+          $(document).Toasts("create", {
+            class: "bg-info",
+            title: "Passwords diferentes",
+            subtitle: "",
+            body: "Ambas as passwords tem de ser iguais. Tente novamente.",
+          });
+          return false;
+        }
+        btnSubmit.type = "Submit";
+        return true;
       }
     </script>
   </body>

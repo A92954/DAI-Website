@@ -470,9 +470,9 @@
             <h3 class="section-title">Atividades Planeadas</h3>
           </header>
   
-          <div class="row portfolio-container">
-  
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+          <div id="Lista" class="row portfolio-container">
+            
+            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
               <div class="portfolio-wrap">
                 <figure>
                   <img src="/Frontend/FrontOffice/bizpage-master/bizpage-master/img/Grafitti.jpg" class="img-fluid" alt="">
@@ -481,8 +481,15 @@
                 </figure>
   
                 <div class="portfolio-info">
-                  <h4><a href="#">Introdução ao Grafitti</a></h4>
-                  <p>Bom Jesus - 22/05/2021</p>
+                  <h4 name="name"><a href="#"></a></h4>
+                  <div class="row">
+                    <div class="col">
+                      <p name="activity_local"></p>
+                    </div>
+                    <div class="col">
+                      <p name="schedule"></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -530,7 +537,7 @@
                   <p>Parque da Peneda - 26/05/2021</p>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section><!-- #portfolio -->
@@ -602,7 +609,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form action ="http://161.230.18.89:8080/DAI_backend/register_partner"  method ="POST" class="form">
+                  <form action ="http://localhost:8080/DAI_backend/register_partner"  method ="POST" class="form">
                     <div class="form-group">
                       <label for="name">Nome:</label>
                       <input type="text" class="form-control" name="name_partner" id="name" />
@@ -799,6 +806,7 @@
     <script src="contactform/contactform.js"></script>
 <!-- Controllers -->
 <script src="/Frontend/Backoffice/Adaptado/controllers/cookie.js"></script>
+<script src="/Frontend/Backoffice/Adaptado/controllers/controller_listaFrontOffice.js"></script>
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>
   </body>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AdminLTE 3 | Calendar</title>
+    <title>Cidade amiga</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -363,15 +363,6 @@
                             />
                             <br />
                             <input
-                              id="new-event-data"
-                              type="date"
-                              class="form-control"
-                              placeholder="Data"
-                              name="schedule"
-                              required
-                            />
-                            <br />
-                            <input
                               id="new-event-cidade"
                               type="text"
                               class="form-control"
@@ -381,12 +372,29 @@
                             />
                             <br />
                             <input
+                              id="new-event-data"
+                              type="date"
+                              class="form-control"
+                              placeholder="Data"
+                              name="schedule"
+                              required
+                            />
+                            <br />
+                            <input
                               id="new-event-descricao"
                               type="text"
                               class="form-control"
                               placeholder="Descrição"
-                              name="activity_local"
+                              name="description"
                               required
+                            />
+                            <br />
+                            <input
+                              id="new-event-instituicoes"
+                              type="text"
+                              class="form-control"
+                              placeholder="Instituição"
+                              name="id_institution"
                             />
                             <br />
                             <input
@@ -394,7 +402,7 @@
                               type="text"
                               class="form-control"
                               placeholder="Parceiros"
-                              name="id_institution"
+                              name="id_partner"
                             />
                             <br />
                             <div class="custom-file">
@@ -420,7 +428,6 @@
                             <!-- /input-group -->
                           </div>
                           <button
-                            id="add-new-event"
                             type="submit"
                             class="btn btn-primary"
                             class="btn btn-primary"

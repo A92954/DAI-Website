@@ -565,68 +565,69 @@
               <form>
                 <div class="form-row">
                   <div class="form-group col-md-8">
-                    <label for="inputEmail4">Nome da atividade</label>
+                    <label for="nAtividade">Nome da atividade</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="inputEmail4"
+                      id="nAtividade"
+                      value=""
                       readonly
                     />
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="inputPassword4">Local</label>
+                    <label for="lAtividade">Local</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="inputPassword4"
+                      id="lAtividade"
+                      value=""
                       readonly
                     />
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">Data de inicio</label>
+                    <label for="diAtividade">Data de inicio</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="inputEmail4"
+                      id="diAtividade"
+                      value=""
                       readonly
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Data de fim</label>
+                    <label for="dfAtividade">Data de fim</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="inputPassword4"
+                      id="dfAtividade"
+                      value=""
                       readonly
                     />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Descrição</label>
+                  <label for="dAtividade">Descrição</label>
                   <textarea
                     class="form-control"
-                    id="exampleFormControlTextarea1"
+                    id="dAtividade"
                     rows="3"
                     style="resize: none"
+                    value=""
                     readonly
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlSelect2">Parceiros</label>
-                  <select
-                    multiple
+                  <label for="pAtividade">Parceiros</label>
+                  <textarea
                     class="form-control"
-                    id="exampleFormControlSelect2"
-                    aria-readonly="true"
-                  >
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                  </select>
+                    id="pAtividade"
+                    rows="3"
+                    style="resize: none"
+                    value=""
+                    readonly
+                  ></textarea>
                 </div>
               </form>
             </div>
@@ -742,16 +743,6 @@
           } else {
             table.row($(this).parents("tr")).remove().draw();
           }
-        });
-        //mostrar info no modal
-        $(document).ready(function () {
-          $("#example1").DataTable();
-          $("#example1 tbody").on("click", ".ver_Mais", function () {
-            $("#VerMaisInfo").modal("show");
-
-            var nome_atividade = $("td", this).eq(0).text();
-            $("#exampleFormControlInput1").text(nome_atividade);
-          });
         });
       });
     </script>

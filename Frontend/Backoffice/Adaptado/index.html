@@ -325,7 +325,7 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                   <div class="inner">
-                    <h3 id="n-ati-ati">150</h3>
+                    <h3 id="n-ati-ati" value="test">150</h3>
 
                     <p>Atividades ativas</p>
                   </div>
@@ -386,7 +386,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3>65</h3>
+                    <h3 id="n-tot-ati" value="test"></h3>
 
                     <p>Total de atividades</p>
                   </div>
@@ -472,7 +472,7 @@
 
                   <div class="info-box-content">
                     <span class="info-box-text">Sugestões</span>
-                    <span class="info-box-number">1,715</span>
+                    <span class="info-box-number" id="n-sugestoes" value="test"></span>
 
                     <div class="progress">
                       <div class="progress-bar" style="width: 70%"></div>
@@ -823,7 +823,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="http://161.230.18.89:8080/DAI_backend/register_evaluation_developed">
+              <form method="POST" action="http://localhost:8080/DAI_backend/register_evaluation_developed">
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="Activity">Atividade</label>
@@ -977,7 +977,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="http://161.230.18.89:8080/DAI_backend/register_evaluation_program">
+              <form method="POST" action="http://localhost:8080/DAI_backend/register_evaluation_program">
                 <div class="form-group">
                   <label>Grau de satisfação das pessoas envolvidas?</label>
                   <select class="custom-select my-1 mr-sm-2" name="id_satisfaction" id="inlineFormCustomSelectPref" required>
@@ -1035,7 +1035,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="http://161.230.18.89:8080/DAI_backend/register_evaluation_plan">
+              <form method="POST" action="http://localhost:8080/DAI_backend/register_evaluation_plan">
                 <div class="form-group">
                   
                     <label for="idactivity">Atividade</label>
@@ -1198,7 +1198,7 @@
     <script src="dist/js/pages/dashboard.js"></script>
     <script src="dist/js/pages/dashboard2.js"></script>
     <!-- Controllers -->
-    <script src="/Frontend/Backoffice/Adaptado/controllers/controller_formularios.js"></script>
+    <script src="/Frontend/Backoffice/Adaptado/controllers/controller_dashboard.js"></script>
     <script>
       $(function () {
         /* ChartJS
@@ -1239,7 +1239,7 @@
       (async ()=>{
         var strHtml = "";
         var ents = document.getElementById("activities");
-        const response = await fetch('http://161.230.18.89:8080/DAI_backend/read_activity');
+        const response = await fetch('http://localhost:8080/DAI_backend/read_activity');
         const activities12 = await response.json();
         for(const activity of activities12){
           strHtml+= `<option name="${activity.id_activity}" value="${activity.id_activity}"> ${activity.name}</option>`
@@ -1251,7 +1251,7 @@
       (async ()=>{
         var strHtml = "";
         var ents = document.getElementById("activities1");
-        const response = await fetch('http://161.230.18.89:8080/DAI_backend/read_activity');
+        const response = await fetch('http://localhost:8080/DAI_backend/read_activity');
         const activities14 = await response.json();
         for(const activity of activities14){
           strHtml+= `<option value="${activity.id_activity}"> ${activity.name}</option>`
