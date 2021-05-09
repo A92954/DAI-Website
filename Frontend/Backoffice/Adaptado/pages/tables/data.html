@@ -639,12 +639,10 @@
       <!-- /.modal -->
 
       <footer class="main-footer">
-        <div class="float-right d-none d-sm-block"><b>Version</b> 3.1.0-rc</div>
         <strong
-          >Copyright &copy; 2014-2020
-          <a href="https://adminlte.io">AdminLTE.io</a>.</strong
-        >
-        All rights reserved.
+          >Copyright &copy;
+          <a href="http://prochildcolab.pt/">ProChild</a></strong
+        >. Todos os direitos reservados.
       </footer>
 
       <!-- Control Sidebar -->
@@ -684,38 +682,37 @@
     <!-- Page specific script -->
     <script>
       $(function () {
-        $("#example1")
-          .DataTable({
-            responsive: true,
-            lengthChange: false,
-            autoWidth: false,
-            buttons: ["excel", "pdf", "print", "colvis"],
-            language: {
-              sprocessing: "Tratamento em curso...",
-              search: "Procurar",
-              lengthMenu: "Ver elementos _MENU_",
-              info: "Mostrando _START_ de _END_ entradas",
-              infoEmpty: "",
-              infoFiltered: "(De um total de _MAX_)",
-              infoPostFix: "",
-              loadingRecords: "Carregamento em curso...",
-              zeroRecords: "Não foi encontrado nenhum registo correspondente.",
-              emptyTable: "Não existe dados disponíveis na tabela",
-              paginate: {
-                first: "Primeiro",
-                previous: "Anterior",
-                next: "Seguinte",
-                last: "Ultimo",
-              },
-              aria: {
-                sortAscending: ": Ordenar por ordem crescente",
-                sortDescending: ": Ordenar por ordem decrescente",
-              },
+        $("#example1").DataTable({
+          responsive: true,
+          lengthChange: false,
+          autoWidth: false,
+          buttons: ["excel", "pdf", "print", "colvis"],
+          language: {
+            sprocessing: "Tratamento em curso...",
+            search: "Procurar",
+            lengthMenu: "Ver elementos _MENU_",
+            info: "Mostrando _START_ de _END_ entradas",
+            infoEmpty: "",
+            infoFiltered: "(De um total de _MAX_)",
+            infoPostFix: "",
+            loadingRecords: "Carregamento em curso...",
+            zeroRecords: "Não foi encontrado nenhum registo correspondente.",
+            emptyTable: "Não existe dados disponíveis na tabela",
+            paginate: {
+              first: "Primeiro",
+              previous: "Anterior",
+              next: "Seguinte",
+              last: "Ultimo",
             },
-          })
-          .buttons()
-          .container()
-          .appendTo("#example1_wrapper .col-md-6:eq(0)");
+            aria: {
+              sortAscending: ": Ordenar por ordem crescente",
+              sortDescending: ": Ordenar por ordem decrescente",
+            },
+          },
+        });
+        // .buttons()
+        // .container()
+        // .appendTo("#example1_wrapper .col-md-6:eq(0)");
         $("#example2").DataTable({
           paging: true,
           lengthChange: false,

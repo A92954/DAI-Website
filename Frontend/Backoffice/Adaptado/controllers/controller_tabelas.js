@@ -7,6 +7,27 @@ window.onload = function () {
 };
 
 //preenchimento da tabela das Atividades
+// function tabelaAtividades() {
+//   let table = $("example1").DataTable();
+//   fetch("http://localhost:8080/DAI_backend/read_activity", {
+//     headers: { "Content-Type": "application/json" },
+//     method: "GET",
+//   })
+//     .then((res) => res.json())
+//     .then((out) => {
+//       $.each(out, function (index, value) {
+//         table.row
+//           .add([
+//             value.name,
+//             value.schedule,
+//             value.description,
+//             value.description,
+//           ])
+//           .draw();
+//       });
+//     })
+//     .catch((err) => console.error(err));
+//}
 function tabelaAtividades() {
   let table = $("example1").DataTable();
   fetch("http://localhost:8080/DAI_backend/read_activity", {

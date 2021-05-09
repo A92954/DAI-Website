@@ -2,6 +2,7 @@
 
 window.onload = function () {
   listarAtividadesPlaneadas();
+  logout();
 };
 
 function listarAtividadesPlaneadas() {
@@ -43,6 +44,27 @@ function listarAtividadesPlaneadas() {
           document.getElementById("dataDaAtividade").innerHTML = valor.schedule;
           i++;
         }
+      });
+    })
+    .catch((err) => console.error(err));
+}
+
+// em construção ...
+function logout() {
+  fetch("http://localhost:8080/DAI_backend/logout1", {
+    headers: { "Content-Type": "application/json" },
+    method: "PUT",
+  })
+    .then((res) => res.json())
+    .then((out) => {
+      $.each(out, function (index, valor) {
+        if (valor.state == 1) {
+          console.log("igual a 1");
+        } else if (valor.state == 0) {
+          console.log("igual a 0");
+        }
+        valor.state = 0;
+        console.log(valor.state);
       });
     })
     .catch((err) => console.error(err));

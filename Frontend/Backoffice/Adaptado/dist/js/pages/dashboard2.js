@@ -1,7 +1,9 @@
 /* global Chart:false */
 
 $(function () {
-  "use strict";
+  var yAtiv = [];
+  getData();
+  ("use strict");
 
   /* ChartJS
    * -------
@@ -11,6 +13,23 @@ $(function () {
   //-----------------------
   // - MONTHLY SALES CHART -
   //-----------------------
+
+  async function getData() {
+    const response = await fetch(
+      "http://localhost:8080/DAI_backend/read_activity_graphic"
+      // "http://161.230.18.89:8080/DAI_backend/read_activity_graphic1"
+    );
+    const data = await response.text();
+
+    const table = data.split(",").slice(0);
+    table.forEach((row) => {
+      const columns = row.split(":");
+      const ocorr = columns[1];
+      yAtiv.push(ocorr);
+      //não está a imprimir o ultimo mês
+      // console.log(ocorr);
+    });
+  }
 
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
@@ -40,18 +59,7 @@ $(function () {
         pointStrokeColor: "rgba(60,141,188,1)",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(60,141,188,1)",
-        data: [28, 48, 40, 19, 86, 27, 90, 19, 86, 27, 90, 50],
-      },
-      {
-        label: "Electronics",
-        backgroundColor: "rgba(210, 214, 222, 1)",
-        borderColor: "rgba(210, 214, 222, 1)",
-        pointRadius: false,
-        pointColor: "rgba(210, 214, 222, 1)",
-        pointStrokeColor: "#c1c7d1",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [65, 59, 80, 81, 56, 55, 40, 81, 56, 55, 40, 65],
+        data: yAtiv,
       },
     ],
   };
