@@ -1,5 +1,6 @@
 window.onload = function () {
   listarAtividades();
+  calendarioCamaras();
 };
 
 function listarAtividades() {
@@ -32,6 +33,28 @@ function listarAtividades() {
     })
     .catch((err) => console.error(err));
 }
+
+// //preencher o calendario TENTATIVA
+// function calendarioCamaras() {
+//   var nAtividadeCalendario;
+//   var diAtividadeCalendario;
+//   var dfAtividadeCalendario;
+
+//   fetch("http://localhost:8080/DAI_backend/read_activity", {
+//     headers: { "Content-Type": "application/json" },
+//     method: "GET",
+//   })
+//     .then((res) => res.json())
+//     .then((out) => {
+//       $.each(out, function (index, valor) {
+//         nAtividadeCalendario = valor.name;
+//         diAtividadeCalendario = valor.schedule;
+//         dfAtividadeCalendario = valor.schedule_end;
+//         console.log("vim aqui");
+//       });
+//     })
+//     .catch((err) => console.error(err));
+// }
 
 //como descobrir em qual é que ele carrega ? (não dá pelo ID)
 function infoModal() {

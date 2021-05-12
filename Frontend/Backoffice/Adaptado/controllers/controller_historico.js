@@ -19,7 +19,7 @@ function listarHistorico() {
   var dataFimdAtividade;
   var avaliacaodAtividade;
 
-  fetch("http://161.230.18.89:8080/DAI_backend/read_activity", {
+  fetch("http://localhost:8080/DAI_backend/read_activity", {
     headers: { "Content-Type": "application/json" },
     method: "GET",
   })
