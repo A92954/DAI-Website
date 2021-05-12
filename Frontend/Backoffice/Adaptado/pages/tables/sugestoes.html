@@ -546,14 +546,18 @@
           autoWidth: false,
           responsive: true,
         });
-        $(".toastsDefaultSuccess").click(function () {
-          $(document).Toasts("create", {
-            class: "bg-success",
-            title: "Sugestão aceite",
-            subtitle: "Registado",
-            body: "A sugestão foi aceite com sucesso.",
-          });
-        });
+        $("#tabela-sugestoes").on(
+          "click",
+          ".toastsDefaultSuccess",
+          function () {
+            $(document).Toasts("create", {
+              class: "bg-success",
+              title: "Sugestão aceite",
+              subtitle: "Registado",
+              body: "A sugestão foi aceite com sucesso.",
+            });
+          }
+        );
         $("#tabela-sugestoes").on("click", ".remove", function () {
           var table = $("#tabela-sugestoes").DataTable();
           var row = $(this).parents("tr");

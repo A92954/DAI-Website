@@ -97,12 +97,10 @@ function listarHistorico() {
         $("#PostWrapper").append(postElement);
         document.getElementById("nomeAtividade").innerHTML = nomedAtividade;
         document.getElementById("localAtividade").innerHTML = localdAtividade;
-        document.getElementById(
-          "descricaoAtividade"
-        ).innerHTML = descricaodAtividade;
-        document.getElementById(
-          "dataFimAtividade"
-        ).innerHTML = dataFimdAtividade;
+        document.getElementById("descricaoAtividade").innerHTML =
+          descricaodAtividade;
+        document.getElementById("dataFimAtividade").innerHTML =
+          dataFimdAtividade;
         document.getElementById("nomeAtividade").id = "nomeAtividade2";
         document.getElementById("localAtividade").id = "localAtividade2";
         document.getElementById("descricaoAtividade").id =

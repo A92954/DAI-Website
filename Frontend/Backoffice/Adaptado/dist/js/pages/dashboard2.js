@@ -16,17 +16,17 @@ $(function () {
 
   async function getData() {
     const response = await fetch(
-      "http://localhost:8080/DAI_backend/read_activity_graphic"
+      "http://localhost:8080/DAI_backend/read_activity_graphic1"
       // "http://161.230.18.89:8080/DAI_backend/read_activity_graphic1"
     );
     const data = await response.text();
-
+    // console.log("ent bom dia");
     const table = data.split(",").slice(0);
     table.forEach((row) => {
       const columns = row.split(":");
       const ocorr = columns[1];
       yAtiv.push(ocorr);
-      //não está a imprimir o ultimo mês
+      // não está a imprimir o ultimo mês
       // console.log(ocorr);
     });
   }
@@ -51,7 +51,7 @@ $(function () {
     ],
     datasets: [
       {
-        label: "Digital Goods",
+        label: "Nº atividades",
         backgroundColor: "rgba(60,141,188,0.9)",
         borderColor: "rgba(60,141,188,0.8)",
         pointRadius: false,

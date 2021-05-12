@@ -706,14 +706,18 @@
           autoWidth: false,
           responsive: true,
         });
-        $(".toastsDefaultSuccess").click(function () {
-          $(document).Toasts("create", {
-            class: "bg-success",
-            title: "Patrocinio aceite",
-            subtitle: "Registado",
-            body: "A parceria aceite foi adicionada à atividade em questão.",
-          });
-        });
+        $("#tabela-parceiros").on(
+          "click",
+          ".toastsDefaultSuccess",
+          function () {
+            $(document).Toasts("create", {
+              class: "bg-success",
+              title: "Patrocinio aceite",
+              subtitle: "Registado",
+              body: "A parceria aceite foi adicionada à atividade em questão.",
+            });
+          }
+        );
         $("#tabela-parceiros").on("click", ".remove", function () {
           var table = $("#tabela-parceiros").DataTable();
           var row = $(this).parents("tr");

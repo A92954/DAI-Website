@@ -5,7 +5,7 @@ window.onload = function () {
 function listarAtividades() {
   var nomeAtividade;
 
-  fetch("http://localhost:8080/DAI_backend/read_all_activity", {
+  fetch("http://localhost:8080/DAI_backend/read_activity1", {
     headers: { "Content-Type": "application/json" },
     method: "GET",
   })
@@ -16,14 +16,14 @@ function listarAtividades() {
 
         var postElement = $(
           '<div\
-          class="external-event bg-info"\
-          data-toggle="modal"\
-          data-target="#MaisInfo2"\
-          id="titulo"\
-          onclick="infoModal()"\
-        >\
-          Go home\
-        </div>'
+            class="external-event bg-info"\
+            data-toggle="modal"\
+            data-target="#MaisInfo"\
+            id="titulo"\
+            onclick="infoModal()"\
+          >\
+            Go home\
+          </div>'
         );
         $("#PostWrapper").append(postElement);
         document.getElementById("titulo").innerHTML = nomeAtividade;

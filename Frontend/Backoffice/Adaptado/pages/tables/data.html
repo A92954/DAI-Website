@@ -273,7 +273,7 @@
                     >
                       <thead>
                         <tr>
-                          <th>Nome atividade</th>
+                          <th class="teste90">Nome atividade</th>
                           <th>Data inicio/fim</th>
                           <th>Descrição</th>
                           <th></th>
@@ -722,13 +722,12 @@
           autoWidth: false,
           responsive: true,
         });
-        $(".toastsDefaultSuccess").click(function () {
+        $("#example1").on("click", ".toastsDefaultSuccess", function () {
           $(document).Toasts("create", {
             class: "bg-success",
             title: "Atividade patrocinada",
             subtitle: "Registado",
-            body:
-              "A atividade aceite foi adicionada ao seu calendário de atividades.",
+            body: "A atividade aceite foi adicionada ao seu calendário de atividades.",
           });
         });
         $("#example1").on("click", ".remove", function () {

@@ -4,16 +4,17 @@ window.onload = function () {
   var nAtiPla = 0;
   var nAtiRea = 0;
   var i = 0;
-  var dataAtividade;
-  var today = new Date();
-  var date =
-    today.getFullYear() +
-    "-" +
-    (today.getFullMonth() + 1) +
-    "-" +
-    today.getFullDate();
 
-  fetch("http://localhost:8080/DAI_backend/read_activity", {
+  // var dataAtividade;
+  // var today = new Date();
+  // var date =
+  //   today.getFullYear() +
+  //   "-" +
+  //   (today.getFullMonth() + 1) +
+  //   "-" +
+  //   today.getFullDate();
+
+  fetch("http://localhost:8080/DAI_backend/read_all_activity", {
     headers: { "Content-Type": "application/json" },
     method: "GET",
   })
@@ -42,6 +43,8 @@ window.onload = function () {
     .catch((err) => console.error(err));
 
   // numero de sugestões (a funcionar)
+  var j = 0;
+
   fetch("http://localhost:8080/DAI_backend/read_suggestion", {
     headers: { "Content-Type": "application/json" },
     method: "GET",
@@ -49,15 +52,62 @@ window.onload = function () {
     .then((res) => res.json())
     .then((out) => {
       $.each(out, function (index, valor) {
-        i++;
-        document.getElementById("n-sugestoes").innerHTML = i;
+        j++;
+        document.getElementById("n-sugestoes").innerHTML = j;
       });
     })
     .catch((err) => console.error(err));
 
-  //número de gostos
+  //número de parceiros
+  var nParceiros = 0;
 
-  //número de partilhas
+  fetch("http://localhost:8080/DAI_backend/read_partner", {
+    headers: { "Content-Type": "application/json" },
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((out) => {
+      $.each(out, function (index, valor) {
+        nParceiros++;
+        document.getElementById("n-parceiros").innerHTML = nParceiros;
+      });
+    })
+    .catch((err) => console.error(err));
+
+  //número de atividades bem-sucedidas
+  var nAtiBSucedidas = 0;
+
+  fetch("http://localhost:8080/DAI_backend/read_share", {
+    headers: { "Content-Type": "application/json" },
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((out) => {
+      $.each(out, function (index, valor) {
+        if (valor.evaluation >= 3) {
+          nAtiBSucedidas++;
+        } else {
+        }
+        document.getElementById("n-sucedidas").innerHTML = nAtiBSucedidas;
+      });
+    })
+    .catch((err) => console.error(err));
+
+  //número de utilizadores registados
+  var nRegistados = 0;
+
+  fetch("http://localhost:8080/DAI_backend/read_user", {
+    headers: { "Content-Type": "application/json" },
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((out) => {
+      $.each(out, function (index, valor) {
+        nRegistados++;
+        document.getElementById("n-registados").innerHTML = nRegistados;
+      });
+    })
+    .catch((err) => console.error(err));
 
   //média de idade dos utilizadores (feito)
   var e0e6 = 0;
