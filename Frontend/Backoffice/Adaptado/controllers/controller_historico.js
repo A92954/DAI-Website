@@ -19,7 +19,7 @@ function listarHistorico() {
   var dataFimdAtividade;
   var avaliacaodAtividade;
 
-  fetch("http://161.230.18.89:8080/DAI_backend/read_activity", {
+  fetch("http://localhost:8080/DAI_backend/read_activity", {
     headers: { "Content-Type": "application/json" },
     method: "GET",
   })
@@ -70,7 +70,7 @@ function listarHistorico() {
               </div>\
               <div class="col-5 text-center">\
                 <img\
-                  src="../../dist/img/user1-128x128.jpg"\
+                  src="/Frontend/Backoffice/Adaptado/dist/img/125753222.jpg"\
                   alt="user-avatar"\
                   class="img-circle img-fluid"\
                 />\

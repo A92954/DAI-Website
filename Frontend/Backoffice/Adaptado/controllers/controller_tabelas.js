@@ -93,31 +93,37 @@ function recusarAtividade() {}
 
 //preenchimento da tabela de materiais de referencia
 function tabelaMateriais() {
-  let table = $("tabela-m-referencia").DataTable();
+  let table = $("#tabela-m-referencia").DataTable();
   fetch("http://localhost:8080/DAI_backend/read_material_reference", {
     headers: { "Content-Type": "application/json" },
     method: "GET",
   })
     .then((res) => res.json())
     .then((out) => {
-      $("#tabela-m-referencia tbody").empty();
       $.each(out, function (index, valor) {
-        $("#tabela-m-referencia tbody").append(
-          "<tr>" +
-            "<td>" +
-            valor.title +
-            "</td>" +
-            "<td>" +
-            valor.description +
-            "</td>" +
-            "<td>" +
-            valor.state + //true = está ativo
-            "</td>" +
-            "<td>" +
-            valor.file + //true = está ativo
-            "</td>" +
-            "</tr>"
-        );
+        table.row
+          .add([
+            valor.title,
+            valor.description,
+            '<div\
+            class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"\
+          >\
+            <input\
+              type="checkbox"\
+              class="custom-control-input"\
+              id="customSwitch1"\
+            />\
+            <label\
+              class="custom-control-label"\
+              for="customSwitch1"\
+            ></label>\
+          </div>',
+            '<a class="btn btn-danger btn-sm remove">\
+          <i class="fas fa-trash"> </i>\
+          Apagar\
+        </a>',
+          ])
+          .draw();
       });
     })
     .catch((err) => console.error(err));

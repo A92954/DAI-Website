@@ -384,6 +384,15 @@
                             />
                             <br />
                             <input
+                              id="new-event-data"
+                              type="date"
+                              class="form-control"
+                              placeholder="Data"
+                              name="schedule_end"
+                              required
+                            />
+                            <br />
+                            <input
                               id="new-event-descricao"
                               type="text"
                               class="form-control"
@@ -393,7 +402,7 @@
                             />
                             <br />
                             <input
-                              id="new-event-instituicoes"
+                              id="institutions"
                               type="text"
                               class="form-control"
                               placeholder="Instituição"
@@ -401,7 +410,7 @@
                             />
                             <br />
                             <input
-                              id="new-event-parceiros"
+                              id="partners"
                               type="text"
                               class="form-control"
                               placeholder="Parceiros"
@@ -623,7 +632,7 @@
           theme: "bootstrap4",
         });
         /* initialize the external events
-     -----------------------------------------------------------------*/
+      -----------------------------------------------------------------*/
         function ini_events(ele) {
           ele.each(function () {
             // create an Event Object (https://fullcalendar.io/docs/event-object)
@@ -647,7 +656,7 @@
         ini_events($("#external-events div.external-event"));
 
         /* initialize the calendar
-     -----------------------------------------------------------------*/
+      -----------------------------------------------------------------*/
         //Date for the calendar events (dummy data)
         var date = new Date();
         var d = date.getDate(),
@@ -796,6 +805,36 @@
         });
         bsCustomFileInput.init();
       });
+
+      //formulários
+      (async () => {
+        var strHtml = "";
+        var ents = document.getElementById("institutions");
+        const response = await fetch(
+          "http://localhost:8080/DAI_backend/read_institution"
+        );
+        const institutions = await response.json();
+        for (const institution of institutions) {
+          strHtml += `<option name="${institution.id_institution}" value="${institution.id_institution}"> ${institution.institution_name}</option>`;
+          console.log("institution:" + institution.institution_name);
+        }
+        ents.innerHTML = strHtml;
+      })();
+
+      //formulários
+      (async () => {
+        var strHtml = "";
+        var ents = document.getElementById("partners");
+        const response = await fetch(
+          "http://localhost:8080/DAI_backend/read_partner"
+        );
+        const partners = await response.json();
+        for (const partner of partners) {
+          strHtml += `<option name="${partner.id_partner}" value="${partner.id_partner}"> ${partner.name_partner}</option>`;
+          console.log("partner:" + partner.name_partner);
+        }
+        ents.innerHTML = strHtml;
+      })();
     </script>
   </body>
 </html>
